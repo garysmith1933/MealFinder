@@ -5,7 +5,7 @@ const fetch = require('node-fetch');
 const PORT = process.env.PORT || 3001;
 const app = express();
 
-app.get('/data', async (req,res,next) => {
+app.get('/foodData', async (req,res,next) => {
     try {
         const apiKey = `apiKey=${process.env.REACT_APP_KEY}`
         const api = "https://api.spoonacular.com/recipes/findByIngredients?"
