@@ -11,8 +11,8 @@ app.use(express.urlencoded({ extended: true }));
 app.post('/recipeResults', async (req,res,next) => {
     try {
         const apiKey = `apiKey=${process.env.REACT_APP_KEY}`
-        const api = "https://api.spoonacular.com/recipes/findByIngredients?"
-        const ingredients = `&ingredients=${req.body.ingredients}`
+        const api = "https://api.spoonacular.com/recipes/complexSearch?"
+        const ingredients = `&query=${req.body.ingredients}`
         const number = '&number=1'
         console.log(ingredients)
         const url = api + apiKey + ingredients + number
