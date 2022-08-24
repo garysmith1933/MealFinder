@@ -1,40 +1,39 @@
 import {getRecipes} from './store/store.js'
-import './App.css';
 import {connect} from 'react-redux'
-import {useState, useEffect} from 'react'
+import {useState} from 'react'
+import './Styles.css'
 
-
-function App({getRecipes,state}) {
+function App({getRecipes, results}) {
   const [query, setQuery] = useState('');
   const [searchQuery, setSearchQuery] = useState('')
-  const [results, setResults] = useState(null)
+  
+  console.log(results)
 
   const searchResults = () => {
     setSearchQuery(query)
     getRecipes(query)
   }
 
-  useEffect(() => {
-  //pick off from here
-  if(state[0]) {
-    setResults(state[0].results)
-  }  
-  },[state])
-
   const recipeInfo = results ? 
   results.length < 1 ? `No Results for ${searchQuery}` :
   results.map(recipe => {
-    return <div key={recipe.id}>{recipe.title}</div>
+    return <div className='recipes' key={recipe.id}>{recipe.title}
+    <img className='recipe-image' src={recipe.image}/>
+    </div>
   }) : null
 
   return (
-    <div className="App">
-        <h1>
-          What do you want for dinner?
-        </h1>
-
+    <div className='content'>
+      
+          <h1 className='title'>
+            Whats for dinner?
+          </h1>
+     
+      <div>
         <input type='text' placeholder="ex chicken" onChange={(ev) => setQuery(ev.target.value)}/>
         <button onClick={() => searchResults()}> Submit </button> 
+       </div>
+
 
         <div> {recipeInfo} </div>
     </div>
@@ -42,9 +41,9 @@ function App({getRecipes,state}) {
 }
 
 const mapState = (state) => {
-  return {state}
+  const {results} = state;
+  return {results};
 }
-
 const mapDispatch = (dispatch) => {
   return {
     getRecipes: async(query)=> await dispatch(getRecipes(query))

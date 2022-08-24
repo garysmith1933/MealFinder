@@ -1,0 +1,23 @@
+
+body {
+    padding: 1.5rem;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.recipes {
+    display: flex;
+    flex-direction: column;
+    padding-top: 1rem;
+    align-items: center;
+}
+
+.recipe-image {
+    height: 500px;
+    width: 500px;
+    border-radius: 10px;
+}
