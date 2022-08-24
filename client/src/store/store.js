@@ -5,9 +5,8 @@ const LOAD_RECIPES = 'LOAD_RECIPES'
 
 const reducer = (state=[], action) => {
     if(action.type === LOAD_RECIPES) {
-        return [...state, action.recipes]
+        return action.recipes;
     }
-
     return state;
 }
 export const store = configureStore({reducer})
