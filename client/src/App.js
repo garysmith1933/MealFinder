@@ -16,8 +16,9 @@ function App({getRecipes,state}) {
 
   useEffect(() => {
   //pick off from here
-  console.log(state)
-    setResults(state[0])
+  if(state[0]) {
+    setResults(state[0].results)
+  }  
   },[state])
 
   const recipeInfo = results ? 
