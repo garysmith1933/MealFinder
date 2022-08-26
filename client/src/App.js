@@ -18,7 +18,10 @@ function App({getRecipes, results}) {
   results.length < 1 ? `No Results for ${searchQuery}` :
   results.map(recipe => {
     return <div className='recipes' key={recipe.id}>{recipe.title}
-    <img className='recipe-image' src={recipe.image}/>
+    <a href={`${recipe.sourceUrl}`} target="_blank">
+    <div className='recipe-image' style={{backgroundImage: `url(${recipe.image})`}}></div>
+    </a>
+    
     </div>
   }) : null
 
