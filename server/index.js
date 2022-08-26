@@ -1,4 +1,3 @@
-
 require('dotenv').config();
 const express = require("express");
 const fetch = require('node-fetch');
@@ -14,10 +13,11 @@ app.post('/recipeResults', async (req,res,next) => {
         const api = "https://api.spoonacular.com/recipes/complexSearch?"
         const ingredients = `&query=${req.body.ingredients}`
         const recipeInfo = '&addRecipeInformation=true'
-        const maxReadyTime = '&MaxReadyTime=20'
-        const number = '&number=1'
+        //for when setting up a specific time
+        // const maxReadyTime = '&maxReadyTime=40'
+        const number = '&number=3'
         console.log(ingredients)
-        const url = api + apiKey + ingredients + recipeInfo + maxReadyTime + number 
+        const url = api + apiKey + ingredients + recipeInfo  + number 
         const data = await fetch(url)
         const json = await data.json()
         
