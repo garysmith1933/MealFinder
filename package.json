@@ -12,7 +12,10 @@
   "license": "ISC",
   "dependencies": {
     "express": "^4.18.1",
-    "node-fetch": "^2.6.7"
+    "node-fetch": "^2.6.7",
+    "pg": "^8.8.0",
+    "react-router-dom": "^6.3.0",
+    "sequelize": "^6.21.4"
   },
   "devDependencies": {
     "dotenv": "^16.0.1",
