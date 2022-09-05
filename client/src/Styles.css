@@ -45,3 +45,22 @@ body {
 .button:hover {
     background-color: yellow;
   }
+
+  .cuisines {
+    margin-top:3rem;
+    height: 300px;
+    background-color: aqua;
+    border-radius: 10px;
+  }
+
+.slick-slide > div {
+  margin: 0 25px;
+}
+.slick-list {
+  margin: 0 -10px;
+}
+
+.slide-container {
+    width:80%
+}
+
