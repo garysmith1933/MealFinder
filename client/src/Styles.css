@@ -46,12 +46,7 @@ body {
     background-color: yellow;
   }
 
-  .cuisines {
-    margin-top:3rem;
-    height: 300px;
-    background-color: aqua;
-    border-radius: 10px;
-  }
+
 
 .slick-slide > div {
   margin: 0 25px;
@@ -61,6 +56,30 @@ body {
 }
 
 .slide-container {
-    width:80%
+    width:50%;
 }
 
+.cuisines {
+    max-width: 100%;
+    margin-top:0.5rem;
+    border-radius: 10px;
+    height:200px;
+}
+
+.cuisines:hover {
+    opacity: 50%;
+}
+
+.cuisine-title {
+    text-align: center;
+    margin-top: 3rem;
+}
+
+.cuisine-name {
+    text-align:center;
+    /* background-color: black;
+    color:white; */
+    /* padding:1rem; */
+    /* border-radius: 10px; */
+    /* margin-top:5; */
+}
