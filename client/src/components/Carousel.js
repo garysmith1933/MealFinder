@@ -3,8 +3,6 @@ import Cuisines from '../Cuisines.js'
 import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'
 
-console.log(Cuisines)
-
 const Carousel = () => {
     const settings = {
         dots: true,
@@ -43,11 +41,15 @@ const Carousel = () => {
 
       return (
         <div className='slide-container'>
+          <h3 className='cuisine-title'>Search by Cuisine</h3>
         <Slider {...settings}>
             {Cuisines.map(cuisine => {
                 return (
-                    <img className='cuisines' key={cuisine.name} src={cuisine.image} alt={cuisine.name}/>
-                    
+                  <div className='cuisine-container'>
+                    <img className='cuisines'  key={cuisine.name} src={cuisine.image} alt={cuisine.name}/>  
+                     <p className="cuisine-name"> {cuisine.name} </p>  
+                  </div>
+                   
                 )    
             })}
         </Slider>
