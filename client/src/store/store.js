@@ -17,3 +17,10 @@ export const getRecipes = (params) => {
         dispatch({type: LOAD_RECIPES, recipes: response.data})
     }
 }
+
+export const getCuisineRecipes = (cuisineName) => {
+    return async(dispatch) => {
+        const response = await axios.post('/cuisineRecipes', {cuisine: `${cuisineName}`})
+        dispatch({type: LOAD_RECIPES, cuisineRecipes: response.data })
+    }
+}

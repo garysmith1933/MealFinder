@@ -2,8 +2,23 @@ import Slider from "react-slick";
 import Cuisines from '../Cuisines.js'
 import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'
+import { getCuisineRecipes } from "../store/store.js";
+import { connect } from "react-redux";
+import { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
-const Carousel = () => {
+
+
+const Carousel = ({cuisineRecipes, getCuisineRecipes}) => {
+  let navigate = useNavigate();
+
+useEffect(() => {
+  console.log('true')
+  // if(cuisineRecipes) navigate('/cuisineRecipes', {cuisineResults: cuisineRecipes})
+},[cuisineRecipes])
+
+console.log(cuisineRecipes)
+
     const settings = {
         dots: true,
         lazyLoad: true,
@@ -16,7 +31,7 @@ const Carousel = () => {
             breakpoint: 1024,
             settings: {
               slidesToShow: 3,
-              slidesToScroll: 3,
+              slidesToScroll: 2,
               infinite: true,
               dots: true
             }
@@ -24,8 +39,8 @@ const Carousel = () => {
           {
             breakpoint: 600,
             settings: {
-              slidesToShow: 2,
-              slidesToScroll: 2,
+              slidesToShow: 1,
+              slidesToScroll: 1,
               initialSlide: 2
             }
           },
@@ -46,7 +61,7 @@ const Carousel = () => {
             {Cuisines.map(cuisine => {
                 return (
                   <div className='cuisine-container'>
-                    <img className='cuisines'  key={cuisine.name} src={cuisine.image} alt={cuisine.name}/>  
+                    <img className='cuisines'  key={cuisine.id} src={cuisine.image} alt={cuisine.name} onClick={() => getCuisineRecipes(cuisine.name)}/>  
                      <p className="cuisine-name"> {cuisine.name} </p>  
                   </div>
                    
@@ -58,4 +73,13 @@ const Carousel = () => {
 
 }
 
-export default Carousel;
+const mapState = (state) => {
+  const {cuisineRecipes} = state;
+  return {cuisineRecipes};
+}
+const mapDispatch = (dispatch) => {
+  return {
+    getCuisineRecipes: async(query)=> await dispatch(getCuisineRecipes(query))
+  }
+}
+export default connect(mapState, mapDispatch)(Carousel);
