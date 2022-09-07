@@ -25,7 +25,7 @@ export const getRecipes = (params) => {
 
 export const getCuisineRecipes = (cuisineName) => {
     return async(dispatch) => {
-        const response = await axios.get('/cuisineRecipes', {cuisine: `${cuisineName}`})
+        const response = await axios.post('/cuisineRecipes', {cuisine: `${cuisineName}`})
         dispatch({type: LOAD_CUISINES, cuisineRecipes: response.data })
     }
 }

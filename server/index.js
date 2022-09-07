@@ -29,7 +29,7 @@ app.post('/recipeResults', async (req,res,next) => {
     }
 })
 
-app.get('/cuisineRecipes', async (req,res,next) => {
+app.post('/cuisineRecipes', async (req,res,next) => {
     try {
         const apiKey = `apiKey=${process.env.REACT_APP_KEY}`
         const api = "https://api.spoonacular.com/recipes/complexSearch?"

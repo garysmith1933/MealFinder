@@ -2,17 +2,9 @@ import Slider from "react-slick";
 import Cuisines from '../Cuisines.js'
 import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'
-import { getCuisineRecipes } from "../store/store.js";
-import { connect } from "react-redux";
-import { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
 import {Link} from 'react-router-dom'
 
-
-
 const Carousel = (props) => {
-
-console.log(props)
 
     const settings = {
         dots: true,
@@ -56,7 +48,7 @@ console.log(props)
             {Cuisines.map(cuisine => {
                 return (
                   <div className='cuisine-container' key={cuisine.id} >
-                    <Link to={{pathname: '/cuisineRecipes', state: {cuisine: cuisine.name}}}>
+                    <Link to='/cuisineResults' state={{results: `${cuisine.name}`}}>
                       <img className='cuisines' src={cuisine.image} alt={cuisine.name}/>  
                     </Link>
                      <p className="cuisine-name"> {cuisine.name} </p>  
@@ -70,12 +62,5 @@ console.log(props)
 
 }
 
-// const mapState = (state) => {
-//   return {cuisineRecipes: state.cuisineRecipes};
-// }
-// const mapDispatch = (dispatch) => {
-//   return {
-//     getCuisineRecipes: async(name)=> await dispatch(getCuisineRecipes(name))
-//   }
-// }
+
 export default (Carousel);

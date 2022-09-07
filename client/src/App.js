@@ -9,7 +9,7 @@ function App() {
     <Routes>
       <Route path='/' element={<Home/>}/>
       <Route path='/savedRecipes' element={<SavedRecipes/>}/>
-      <Route path='cuisineResults' element={<CuisineResults/>}/>
+      <Route path='/cuisineResults' element={<CuisineResults/>}/>
     </Routes>
   </div>
  );
