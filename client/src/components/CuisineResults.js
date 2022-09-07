@@ -1,9 +1,7 @@
 import { useLocation } from 'react-router-dom'
 
 
-const CuisineRecipes = () => {
-    const location = useLocation()
-
+const CuisineResults = () => {
     return (
         <>
         <h1> Results for Cuisine </h1>
@@ -18,4 +16,4 @@ const CuisineRecipes = () => {
     )
 }
 
-export default CuisineRecipes;
+export default CuisineResults;
