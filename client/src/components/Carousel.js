@@ -48,7 +48,7 @@ const Carousel = (props) => {
             {Cuisines.map(cuisine => {
                 return (
                   <div className='cuisine-container' key={cuisine.id} >
-                    <Link to='/cuisineResults' state={{results: `${cuisine.name}`}}>
+                    <Link to='/cuisineResults' state={{cuisineName: `${cuisine.name}`}}>
                       <img className='cuisines' src={cuisine.image} alt={cuisine.name}/>  
                     </Link>
                      <p className="cuisine-name"> {cuisine.name} </p>  
