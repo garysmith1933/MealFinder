@@ -1,6 +1,6 @@
 import { useLocation } from 'react-router-dom'
 import { useEffect } from 'react'
-import { getCuisineRecipes } from '../store/store'
+import { getCuisineRecipes } from '../store/cuisines'
 import {connect} from 'react-redux'
 
 
