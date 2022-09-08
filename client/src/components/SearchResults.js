@@ -1,4 +1,4 @@
-import {getRecipes} from '../store/store.js'
+import {getRecipes} from '../store/recipes'
 import {connect} from 'react-redux'
 import {useState} from 'react'
 import '../Styles.css'
@@ -7,6 +7,7 @@ import {addToStorage} from "../storage.js"
 function SearchResults({getRecipes, results}) {
   const [query, setQuery] = useState('');
   const [searchQuery, setSearchQuery] = useState('')
+  let gotRecipeResults = false;
 
   //remove this when done
   console.log(results)
@@ -14,10 +15,11 @@ function SearchResults({getRecipes, results}) {
   const searchResults = () => {
     setSearchQuery(query)
     getRecipes(query)
+    gotRecipeResults = true;
   }
 
   const recipeInfo = results ? 
-    results.length < 1 ? `No Results for ${searchQuery}` :
+    results.length < 1 && gotRecipeResults === true ? `No Results for ${searchQuery}` :
     results.map(recipe => {
         return <div className='recipes' key={recipe.id}>
             <h5 className='recipe-title'> {recipe.title} </h5>
@@ -44,7 +46,7 @@ function SearchResults({getRecipes, results}) {
 }
 
 const mapState = (state) => {
-  const {results} = state;
+  const {results} = state.recipes;
   return {results};
 }
 const mapDispatch = (dispatch) => {

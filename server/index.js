@@ -29,6 +29,28 @@ app.post('/recipeResults', async (req,res,next) => {
     }
 })
 
+app.post('/cuisineRecipes', async (req,res,next) => {
+    try {
+        const apiKey = `apiKey=${process.env.REACT_APP_KEY}`
+        const api = "https://api.spoonacular.com/recipes/complexSearch?"
+        const query = `&query=''`
+        const cuisine = `&cuisine=${req.body.cuisine}`
+        const recipeInfo = '&addRecipeInformation=true'
+        const number = '&number=3'
+        const url = api + apiKey + query + cuisine + recipeInfo  + number 
+        const data = await fetch(url)
+        const json = await data.json()
+        res.send(json)
+    } 
+    
+    catch (err) {
+        next(err)
+    }
+})
+
+
+
+
 app.get('/', (req,res,next) => {
     try {
         res.send('working')

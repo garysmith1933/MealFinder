@@ -2,8 +2,10 @@ import Slider from "react-slick";
 import Cuisines from '../Cuisines.js'
 import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'
+import {Link} from 'react-router-dom'
 
-const Carousel = () => {
+const Carousel = (props) => {
+
     const settings = {
         dots: true,
         lazyLoad: true,
@@ -16,7 +18,7 @@ const Carousel = () => {
             breakpoint: 1024,
             settings: {
               slidesToShow: 3,
-              slidesToScroll: 3,
+              slidesToScroll: 2,
               infinite: true,
               dots: true
             }
@@ -24,8 +26,8 @@ const Carousel = () => {
           {
             breakpoint: 600,
             settings: {
-              slidesToShow: 2,
-              slidesToScroll: 2,
+              slidesToShow: 1,
+              slidesToScroll: 1,
               initialSlide: 2
             }
           },
@@ -45,8 +47,10 @@ const Carousel = () => {
         <Slider {...settings}>
             {Cuisines.map(cuisine => {
                 return (
-                  <div className='cuisine-container'>
-                    <img className='cuisines'  key={cuisine.name} src={cuisine.image} alt={cuisine.name}/>  
+                  <div className='cuisine-container' key={cuisine.id} >
+                    <Link to='/cuisineResults' state={{results: `${cuisine.name}`}}>
+                      <img className='cuisines' src={cuisine.image} alt={cuisine.name}/>  
+                    </Link>
                      <p className="cuisine-name"> {cuisine.name} </p>  
                   </div>
                    
@@ -58,4 +62,5 @@ const Carousel = () => {
 
 }
 
-export default Carousel;
+
+export default (Carousel);
