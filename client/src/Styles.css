@@ -83,3 +83,14 @@ body {
     /* border-radius: 10px; */
     /* margin-top:5; */
 }
+
+.cuisine-recipes {
+    width:100%;
+    display: flex;
+    justify-content: center;
+}
+
+.cuisine-body {
+    display:flex;
+    justify-content: center;
+}
