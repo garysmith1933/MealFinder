@@ -17,7 +17,8 @@ body {
 }
 
 .recipe-title {
-    margin-bottom: 0.5rem
+    margin-bottom: 1rem;
+    padding: 0.5rem;
 }
 
 .recipe-image {
@@ -26,6 +27,7 @@ body {
     border-radius: 5px;
     background-repeat: no-repeat;
     background-size: cover;
+    background-position: center;
 }
 
 .recipe-body {
@@ -45,7 +47,6 @@ body {
 .button:hover {
     background-color: yellow;
   }
-
 
 
 .slick-slide > div {
@@ -82,4 +83,28 @@ body {
     /* padding:1rem; */
     /* border-radius: 10px; */
     /* margin-top:5; */
+}
+
+.cuisine-recipes {
+    height: 330px;
+    width: 300px;
+    border-radius: 5px;
+    margin-bottom:1rem;
+    background-color: green;
+}
+
+
+.recipe-info {
+    width:'100%';
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.recipe-name {
+    text-align:center;
+}
+
+a {
+    text-decoration: none;
 }
