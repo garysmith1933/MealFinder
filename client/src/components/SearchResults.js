@@ -2,36 +2,21 @@ import {getRecipes} from '../store/recipes'
 import {connect} from 'react-redux'
 import {useState} from 'react'
 import '../Styles.css'
-import {addToStorage} from "../storage.js"
+import PaginatedResults from "./PaginatedResults"
 
 function SearchResults({getRecipes, results}) {
   const [query, setQuery] = useState('');
   const [searchQuery, setSearchQuery] = useState('')
-  let gotRecipeResults = false;
-
+  const [gotRecipeResults, setGotRecipeResults] = useState(false)
+ 
   //remove this when done
   console.log(results)
 
-  const searchResults = () => {
+  const searchResults = async() => {
     setSearchQuery(query)
-    getRecipes(query)
-    gotRecipeResults = true;
+    await getRecipes(query)
+    setGotRecipeResults(true)
   }
-
-  const recipeInfo = results ? 
-    results.length < 1 && gotRecipeResults === true ? `No Results for ${searchQuery}` :
-    results.map(recipe => {
-        return <div className='recipes' key={recipe.id}>
-            <h5 className='recipe-title'> {recipe.title} </h5>
-                <div className='recipe-body'> 
-                    <div className='button' onClick={() => addToStorage(recipe.title, recipe.sourceUrl, recipe.image)}> + </div>
-                    <a href={`${recipe.sourceUrl}`} target="_blank">
-                        <div className='recipe-image' style={{backgroundImage: `url(${recipe.image})`}}></div>
-                    </a>
-                    <div className='button'> - </div>
-                </div>  
-        </div>
-  }) : null
 
   return (
     <div className='content'>
@@ -40,7 +25,7 @@ function SearchResults({getRecipes, results}) {
         <button onClick={() => searchResults()}> Submit </button> 
       </div>
 
-      <div> {recipeInfo} </div>
+      {gotRecipeResults ? <PaginatedResults recipes={results} query={searchQuery}/> : null}
     </div>
   );
 }
