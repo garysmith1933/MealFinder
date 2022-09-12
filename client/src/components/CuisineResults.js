@@ -5,6 +5,7 @@ import {connect} from 'react-redux'
 import {addToStorage} from "../storage.js"
 import {Pagination, Grid,} from "@mui/material"
 import SingleRecipe from './SingleRecipe'
+import {Link} from 'react-router-dom'
 
 
 const pageSize = 8;
@@ -51,6 +52,7 @@ const CuisineResults = ({getCuisineRecipes, cuisines}) => {
 
     return (
         <>
+        <Link to='/'><button> Back </button></Link>
           <h1> {cuisineName} Cuisine </h1>
           <Grid container spacing={{xs:2, md:3}}>
             {recipeInfo}

@@ -15,7 +15,7 @@ app.post('/recipeResults', async (req,res,next) => {
         const recipeInfo = '&addRecipeInformation=true'
         //for when setting up a specific time
         // const maxReadyTime = '&maxReadyTime=40'
-        const number = '&number=3'
+        const number = '&number=7'
         console.log(ingredients)
         const url = api + apiKey + ingredients + recipeInfo  + number 
         const data = await fetch(url)
@@ -36,7 +36,7 @@ app.post('/cuisineRecipes', async (req,res,next) => {
         const query = `&query=''`
         const cuisine = `&cuisine=${req.body.cuisine}`
         const recipeInfo = '&addRecipeInformation=true'
-        const number = '&number=3'
+        const number = '&number=30'
         const url = api + apiKey + query + cuisine + recipeInfo  + number 
         const data = await fetch(url)
         const json = await data.json()
