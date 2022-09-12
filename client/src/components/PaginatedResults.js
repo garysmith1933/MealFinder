@@ -8,6 +8,7 @@ import {Link} from 'react-router-dom'
 const pageSize = 8;
 
 const PaginatedResults = ({recipes, query}) => {
+    // const {recipes, query} = useLocation().state
     const [currentRecipes, setCurrentRecipes] = useState(recipes)
     console.log(currentRecipes)
     const [pagination, setPagination] = useState({
@@ -35,7 +36,7 @@ const PaginatedResults = ({recipes, query}) => {
 
     const recipeInfo = currentRecipes ? 
       currentRecipes.map(recipe => (
-        <Grid item xs={12} sm={6} md={3} justifyContent='center'>
+        <Grid item xs={12} sm={6} md={3} key={recipe.title} justifyContent='center'>
           <SingleRecipe title={recipe.title} url={recipe.sourceUrl} image={recipe.image}/>
         </Grid>
       )) : null

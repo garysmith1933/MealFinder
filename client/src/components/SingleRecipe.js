@@ -1,6 +1,5 @@
-import {Grid,Card,CardMedia, CardContent, Typography, Button} from '@mui/material'
+import {Card,CardMedia, CardContent, Typography, Button} from '@mui/material'
 import {addToStorage} from "../storage.js"
-import {Link} from 'react-router-dom'
 
 export default function SingleRecipe({title, image, url}) {
     return (
@@ -10,7 +9,7 @@ export default function SingleRecipe({title, image, url}) {
                     <CardMedia component='img' image={image} alt={title} sx={{height: 400}}/>  
                     <CardContent>
                         <Typography variant='h6'>{title}</Typography>
-                        <Button sx={{marginTop: '0.3rem', fontWeight: 'bold', backgroundColor: 'gray', color: 'white'}} onClick={addToStorage}>Save Recipe</Button>
+                        <Button sx={{marginTop: '0.3rem', fontWeight: 'bold', backgroundColor: 'gray', color: 'white'}} onClick={() => addToStorage(title, url, image)}>Save Recipe</Button>
                     </CardContent>
                 </Card>
             </a>

@@ -2,9 +2,10 @@ import {getRecipes} from '../store/recipes'
 import {connect} from 'react-redux'
 import {useState} from 'react'
 import '../Styles.css'
-import PaginatedResults from "./PaginatedResults"
+import {useNavigate} from 'react-router-dom'
 
 function SearchResults({getRecipes, results}) {
+  const navigate = useNavigate()
   const [query, setQuery] = useState('');
   const [searchQuery, setSearchQuery] = useState('')
   const [gotRecipeResults, setGotRecipeResults] = useState(false)
@@ -13,9 +14,11 @@ function SearchResults({getRecipes, results}) {
   console.log(results)
 
   const searchResults = async() => {
+    console.log('this is running')
     setSearchQuery(query)
     await getRecipes(query)
     setGotRecipeResults(true)
+    navigate('/searchResults', {recipes: results, query: searchQuery})
   }
 
   return (
@@ -24,8 +27,6 @@ function SearchResults({getRecipes, results}) {
         <input type='text' placeholder="ex chicken" onChange={(ev) => setQuery(ev.target.value)}/>
         <button onClick={() => searchResults()}> Submit </button> 
       </div>
-
-      {gotRecipeResults ? <PaginatedResults recipes={results} query={searchQuery}/> : null}
     </div>
   );
 }
