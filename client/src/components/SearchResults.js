@@ -3,6 +3,7 @@ import {connect} from 'react-redux'
 import {useState} from 'react'
 import '../Styles.css'
 import {useNavigate} from 'react-router-dom'
+import PaginatedResults from './PaginatedResults'
 
 function SearchResults({getRecipes, results}) {
   const navigate = useNavigate()
@@ -18,7 +19,6 @@ function SearchResults({getRecipes, results}) {
     setSearchQuery(query)
     await getRecipes(query)
     setGotRecipeResults(true)
-    navigate('/searchResults', {recipes: results, query: searchQuery})
   }
 
   return (
@@ -27,7 +27,10 @@ function SearchResults({getRecipes, results}) {
         <input type='text' placeholder="ex chicken" onChange={(ev) => setQuery(ev.target.value)}/>
         <button onClick={() => searchResults()}> Submit </button> 
       </div>
+
+      {gotRecipeResults ? <PaginatedResults recipes={results} query={searchQuery}/> : null}
     </div>
+    
   );
 }
 
