@@ -24,7 +24,7 @@ function SearchResults({getRecipes, results}) {
   return (
     <div className='content'>
       <div>
-        <input type='text' placeholder="ex chicken" onChange={(ev) => setQuery(ev.target.value)}/>
+        <input type='text' placeholder="Search" onChange={(ev) => setQuery(ev.target.value)}/>
         <button onClick={() => searchResults()}> Submit </button> 
       </div>
 

@@ -145,11 +145,27 @@ a {
 
 .landing-search {
     height: 50px;
-    width: 40%;
+    width: 50%;
     background-color: white;
     margin-left: 4rem;
-    border-radius: 30px;
     border-style: none;
+    border-radius: 10px 0 0 10px;
+}
+
+.searchIcon {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    height:20px;
+    width:25px;
+    padding:1rem;
+    background-color: #4A5759;
+    color:white;
+    border-radius: 0 10px 10px 0;
+}
+
+.searchIcon :hover {
+    color: #D80032;
 }
 
 body {
@@ -161,12 +177,12 @@ body {
   }
   
 .random {
-    width:50%;
+    width:80%;
     height: 150px;
     background-color: #F08700;
     margin-top:1.5rem;
     display:flex;
-    justify-content: space-evenly;
+    justify-content: center;
     align-items: center;
 }
 
@@ -182,6 +198,7 @@ body {
     border-radius: 10px;
     color:white;
     font-size: 18px;
+    margin-left: 1rem;
 }
 
 .random-button:hover {

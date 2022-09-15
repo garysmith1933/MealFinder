@@ -1,6 +1,6 @@
 import CuisineResults from './CuisineResults'
+import SearchIcon from '@mui/icons-material/Search';
 const dinner= require('../assets/dinner.jpg')
-
 
 export const TempHome = () => {
     return (
@@ -10,7 +10,11 @@ export const TempHome = () => {
                 <h1 className='landing-title'> Wondering Whats <br/> For Dinner? </h1>
                 <p className='CTA'>Let us help you choose your next meal!</p>
              
-                <input className='landing-search' type='text' placeholder="ex chicken"/>
+                <div style={{display:'flex'}}>
+                    <input className='landing-search' type='text' placeholder="Search"/>
+                    <div className='searchIcon'><SearchIcon/></div>
+                </div>
+                
             </div>
             <img className='landing-image' src={dinner} alt='dinner'/>
         </div>
