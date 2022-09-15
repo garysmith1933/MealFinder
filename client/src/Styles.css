@@ -1,6 +1,6 @@
 
 body {
-    padding: 1.5rem;
+    margin-top: 2rem;
 }
 
 .content {
@@ -58,6 +58,10 @@ body {
 
 .slide-container {
     width:50%;
+    background-color: #B3D89C;
+    border-radius:10px;
+    margin-top:1.5rem;
+    padding-bottom: 1.5rem;
 }
 
 .cuisines {
@@ -67,10 +71,6 @@ body {
     height:200px;
 }
 
-.cuisines:hover {
-    opacity: 50%;
-}
-
 .cuisine-title {
     text-align: center;
     margin-top: 3rem;
@@ -78,11 +78,17 @@ body {
 
 .cuisine-name {
     text-align:center;
-    /* background-color: black;
-    color:white; */
-    /* padding:1rem; */
-    /* border-radius: 10px; */
-    /* margin-top:5; */
+    background-color: #D80032;
+    padding:0.5rem;
+    border-radius:10px;
+    color:white;
+    width: 50%;
+    margin-left: 3.5rem;
+    margin-top:2rem;
+}
+
+.cuisine-name:hover {
+    opacity: 50%;
 }
 
 .cuisine-recipes {
@@ -92,7 +98,6 @@ body {
     margin-bottom:1rem;
     background-color: green;
 }
-
 
 .recipe-info {
     width:'100%';
@@ -107,4 +112,78 @@ body {
 
 a {
     text-decoration: none;
+}
+
+
+.home {
+    display: flex;
+}
+.landing-image {
+    height: 80vh;
+    width:50%;
+}
+
+.landing-content {
+    height: 80vh;
+    width:50%;
+    background-color: #EDAFB8;
+}
+
+.landing-title {
+    color:white;
+    margin-top: 11rem;
+    margin-left: 4rem;
+    margin-bottom: 0.5rem;
+    font-size: 3rem;
+}
+
+.CTA {
+    font-size: 24px;
+    color: white;
+    margin-left: 4rem;
+}
+
+.landing-search {
+    height: 50px;
+    width: 40%;
+    background-color: white;
+    margin-left: 4rem;
+    border-radius: 30px;
+    border-style: none;
+}
+
+body {
+    background-color: #4A5759;
+}
+
+::placeholder {
+    padding:1.5rem;
+  }
+  
+.random {
+    width:50%;
+    height: 150px;
+    background-color: #F08700;
+    margin-top:1.5rem;
+    display:flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.random-title {
+    color:white;
+}
+
+.random-button {
+    height:75px;
+    width: 125px;
+    background-color:#4A5759;
+    border-style:none;
+    border-radius: 10px;
+    color:white;
+    font-size: 18px;
+}
+
+.random-button:hover {
+ background-color: #D80032;
 }
