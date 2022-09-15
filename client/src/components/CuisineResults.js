@@ -4,16 +4,24 @@ import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'
 import { getCuisineRecipes } from '../store/cuisines'
 import {connect} from 'react-redux'
-import PaginatedResults from "./PaginatedResults.js";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import {useNavigate} from 'react-router-dom'
 
-const CuisineResults = ({getCuisineRecipes, results}) => {
+
+const CuisineResults = ({getCuisineRecipes, state}) => {
+  const navigate = useNavigate()
   const [cuisine, setCuisine] = useState('')
+  const [gotRecipeResults, setGotRecipeResults] = useState(false)
  
   const getResults = async(name) => {
     setCuisine(name)
     await getCuisineRecipes(name)
+    setGotRecipeResults(true)
   }
+
+  useEffect(() => {
+    if (gotRecipeResults) navigate('/searchResults', {state: {recipes:state.cuisines.results, query:cuisine}})
+  },[gotRecipeResults])
 
     const settings = {
         dots: true,
@@ -52,7 +60,6 @@ const CuisineResults = ({getCuisineRecipes, results}) => {
 
       return (
         <>
-        {results ? <PaginatedResults recipes={results} query={cuisine}/> : null}
         <div className='slide-container'>
           <h3 className='cuisine-title'>Search by Cuisine</h3>
         <Slider {...settings}>
@@ -76,8 +83,7 @@ const CuisineResults = ({getCuisineRecipes, results}) => {
 
 const mapState = (state) => {
   console.log(state)
-  const {results}= state.cuisines;
-  return {results}
+  return {state}
 }
 const mapDispatch = (dispatch) => {
   return {

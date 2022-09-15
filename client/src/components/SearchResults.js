@@ -3,7 +3,6 @@ import {connect} from 'react-redux'
 import {useState,useEffect} from 'react'
 import '../Styles.css'
 import {useNavigate} from 'react-router-dom'
-import PaginatedResults from './PaginatedResults'
 import SearchIcon from '@mui/icons-material/Search';
 
 function SearchResults({getRecipes,state}) {
