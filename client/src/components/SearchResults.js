@@ -1,42 +1,46 @@
 import {getRecipes} from '../store/recipes'
 import {connect} from 'react-redux'
-import {useState} from 'react'
+import {useState,useEffect} from 'react'
 import '../Styles.css'
 import {useNavigate} from 'react-router-dom'
 import PaginatedResults from './PaginatedResults'
+import SearchIcon from '@mui/icons-material/Search';
 
-function SearchResults({getRecipes, results}) {
+function SearchResults({getRecipes,state}) {
   const navigate = useNavigate()
   const [query, setQuery] = useState('');
   const [searchQuery, setSearchQuery] = useState('')
   const [gotRecipeResults, setGotRecipeResults] = useState(false)
  
   //remove this when done
-  console.log(results)
+  console.log(state)
 
   const searchResults = async() => {
     console.log('this is running')
-    setSearchQuery(query)
     await getRecipes(query)
+    setSearchQuery(query)
     setGotRecipeResults(true)
   }
 
-  return (
-    <div className='content'>
-      <div>
-        <input type='text' placeholder="Search" onChange={(ev) => setQuery(ev.target.value)}/>
-        <button onClick={() => searchResults()}> Submit </button> 
-      </div>
+  useEffect(() => {
+    if (gotRecipeResults) navigate('/searchResults', {state: {recipes:state.recipes.results, query:searchQuery}})
+  },[gotRecipeResults])
 
-      {gotRecipeResults ? <PaginatedResults recipes={results} query={searchQuery}/> : null}
-    </div>
+
+  return (
+    <>
+        <div style={{display:'flex'}}>
+            <input className='landing-search' type='text' placeholder="Search" onChange={(ev) => setQuery(ev.target.value)} />
+            <div className='searchIcon' onClick={() => searchResults()}><SearchIcon/></div>
+        </div>
+    </>
+   
     
   );
 }
 
 const mapState = (state) => {
-  const {results} = state.recipes;
-  return {results};
+  return {state};
 }
 const mapDispatch = (dispatch) => {
   return {

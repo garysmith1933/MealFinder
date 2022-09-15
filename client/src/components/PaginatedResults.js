@@ -7,8 +7,9 @@ import {Link} from 'react-router-dom'
 
 const pageSize = 8;
 
-const PaginatedResults = ({recipes, query}) => {
-    // const {recipes, query} = useLocation().state
+const PaginatedResults = () => {
+    const {recipes, query} = useLocation().state
+    console.log(useLocation())
     const [currentRecipes, setCurrentRecipes] = useState(recipes)
     console.log(currentRecipes)
     const [pagination, setPagination] = useState({
