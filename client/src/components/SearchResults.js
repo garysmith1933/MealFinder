@@ -1,53 +1,45 @@
 import {getRecipes} from '../store/recipes'
 import {connect} from 'react-redux'
-import {useState} from 'react'
+import {useState,useEffect} from 'react'
 import '../Styles.css'
-import {addToStorage} from "../storage.js"
+import {useNavigate} from 'react-router-dom'
+import SearchIcon from '@mui/icons-material/Search';
 
-function SearchResults({getRecipes, results}) {
+function SearchResults({getRecipes,state}) {
+  const navigate = useNavigate()
   const [query, setQuery] = useState('');
   const [searchQuery, setSearchQuery] = useState('')
-  let gotRecipeResults = false;
-
+  const [gotRecipeResults, setGotRecipeResults] = useState(false)
+ 
   //remove this when done
-  console.log(results)
+  console.log(state)
 
-  const searchResults = () => {
+  const searchResults = async() => {
+    console.log('this is running')
+    await getRecipes(query)
     setSearchQuery(query)
-    getRecipes(query)
-    gotRecipeResults = true;
+    setGotRecipeResults(true)
   }
 
-  const recipeInfo = results ? 
-    results.length < 1 && gotRecipeResults === true ? `No Results for ${searchQuery}` :
-    results.map(recipe => {
-        return <div className='recipes' key={recipe.id}>
-            <h5 className='recipe-title'> {recipe.title} </h5>
-                <div className='recipe-body'> 
-                    <div className='button' onClick={() => addToStorage(recipe.title, recipe.sourceUrl, recipe.image)}> + </div>
-                    <a href={`${recipe.sourceUrl}`} target="_blank">
-                        <div className='recipe-image' style={{backgroundImage: `url(${recipe.image})`}}></div>
-                    </a>
-                    <div className='button'> - </div>
-                </div>  
-        </div>
-  }) : null
+  useEffect(() => {
+    if (gotRecipeResults) navigate('/searchResults', {state: {recipes:state.recipes.results, query:searchQuery}})
+  },[gotRecipeResults])
+
 
   return (
-    <div className='content'>
-      <div>
-        <input type='text' placeholder="ex chicken" onChange={(ev) => setQuery(ev.target.value)}/>
-        <button onClick={() => searchResults()}> Submit </button> 
-      </div>
-
-      <div> {recipeInfo} </div>
-    </div>
+    <>
+        <div style={{display:'flex'}}>
+            <input className='landing-search' type='text' placeholder="Search" onChange={(ev) => setQuery(ev.target.value)} />
+            <div className='searchIcon' onClick={() => searchResults()}><SearchIcon/></div>
+        </div>
+    </>
+   
+    
   );
 }
 
 const mapState = (state) => {
-  const {results} = state.recipes;
-  return {results};
+  return {state};
 }
 const mapDispatch = (dispatch) => {
   return {

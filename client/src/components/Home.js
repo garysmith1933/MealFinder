@@ -1,7 +1,7 @@
 import '../Styles.css'
 import SearchResults from "./SearchResults.js"
 import {Link} from 'react-router-dom'
-import Carousel from './Carousel.js';
+import CuisineResults from './CuisineResults.js';
 
 function Home() {
     //need to add navbar
@@ -12,7 +12,7 @@ function Home() {
     <div className='content'>
         <h1 className='title'> Whats for dinner?</h1>
         <SearchResults/>
-        <Carousel/>
+        <CuisineResults/>
     </div>
     </>
 

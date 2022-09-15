@@ -1,69 +1,89 @@
-import { useLocation } from 'react-router-dom'
-import { useEffect, useState } from 'react'
+import Slider from "react-slick";
+import Cuisines from '../Cuisines.js'
+import 'slick-carousel/slick/slick.css'
+import 'slick-carousel/slick/slick-theme.css'
 import { getCuisineRecipes } from '../store/cuisines'
 import {connect} from 'react-redux'
-import {addToStorage} from "../storage.js"
-import {Pagination, Grid,} from "@mui/material"
-import SingleRecipe from './SingleRecipe'
+import { useState, useEffect } from "react";
+import {useNavigate} from 'react-router-dom'
 
 
-const pageSize = 8;
+const CuisineResults = ({getCuisineRecipes, state}) => {
+  const navigate = useNavigate()
+  const [cuisine, setCuisine] = useState('')
+  const [gotRecipeResults, setGotRecipeResults] = useState(false)
+ 
+  const getResults = async(name) => {
+    setCuisine(name)
+    await getCuisineRecipes(name)
+    setGotRecipeResults(true)
+  }
 
-const CuisineResults = ({getCuisineRecipes, cuisines}) => {
-    const {cuisineName} = useLocation().state
-    const [currentRecipes, setCurrentRecipes] = useState(cuisines.results)
-    const [pagination, setPagination] = useState({
-      count: 0,
-      start: 0,
-      end: pageSize
-    })
-    
-    useEffect(() => {
-      getCuisineRecipes(cuisineName)
-      console.log(cuisines)
-    },[])
+  useEffect(() => {
+    if (gotRecipeResults) navigate('/searchResults', {state: {recipes:state.cuisines.results, query:cuisine}})
+  },[gotRecipeResults])
 
-    useEffect(() => {
-      if(cuisines.results) {
-        setPagination({...pagination, count:cuisines.results.length})
-        setCurrentRecipes(cuisines.results.slice(pagination.start,pagination.end))
-      }
-    }, [cuisines, pagination.start, pagination.end])
+    const settings = {
+        dots: true,
+        lazyLoad: true,
+        infinite: false,
+        slidesToShow: 3,
+        slidesToScroll: 1,
+        initialSlide: 0,
+        responsive: [
+          {
+            breakpoint: 1024,
+            settings: {
+              slidesToShow: 3,
+              slidesToScroll: 2,
+              infinite: true,
+              dots: true
+            }
+          },
+          {
+            breakpoint: 600,
+            settings: {
+              slidesToShow: 1,
+              slidesToScroll: 1,
+              initialSlide: 2
+            }
+          },
+          {
+            breakpoint: 480,
+            settings: {
+              slidesToShow: 1,
+              slidesToScroll: 1
+            }
+          }
+        ]
+      };
 
-    
-    const handlePageChange = (event, page) => {
-      const newStart = (page-1) * pageSize
-      const newEnd = (page-1) * pageSize + pageSize
-      setPagination({
-        ...pagination,
-        start: newStart,
-        end: newEnd
-      })
-    }
-
-    const recipeInfo = currentRecipes ? 
-      currentRecipes.map(recipe => (
-        <Grid item xs={12} sm={6} md={3} justifyContent='center'>
-          <SingleRecipe title={recipe.title} url={recipe.sourceUrl} image={recipe.image}/>
-        </Grid>
-     
-      )) : null
-
-    return (
+      return (
         <>
-          <h1> {cuisineName} Cuisine </h1>
-          <Grid container spacing={{xs:2, md:3}}>
-            {recipeInfo}
-          </Grid>
-          <Pagination sx={{display: 'flex', justifyContent:'center', marginTop: '1.5rem'}}count={Math.ceil(pagination.count/pageSize)} onChange={handlePageChange} />
-        </>   
-    )
+        <div className='slide-container'>
+          <h3 className='cuisine-title'>Search by Cuisine</h3>
+        <Slider {...settings}>
+            {Cuisines.map(cuisine => {
+                return (
+                  <div className='cuisine-container' key={cuisine.id}>
+                    <img className='cuisines' src={cuisine.image} alt={cuisine.name}/>  
+                    <p className="cuisine-name" onClick={() => getResults(cuisine.name)}> {cuisine.name} </p>  
+                  </div>
+                   
+                )    
+            })}
+        </Slider>
+        </div>
+        </>
+        
+      )
+
 }
+
 
 const mapState = (state) => {
   console.log(state)
-  const {cuisines} = state;
-  return {cuisines}
+  return {state}
 }
 const mapDispatch = (dispatch) => {
   return {

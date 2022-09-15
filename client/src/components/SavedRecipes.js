@@ -1,28 +1,20 @@
 import '../Styles.css'
 import { Link } from 'react-router-dom'
-
+import {useNavigate} from 'react-router-dom'
+import PaginatedResults from './PaginatedResults'
+//using paginatedResults component to list out data, but this is its own page as opposed to search and cuisine results
 function SavedRecipes() {
+  
 const results = JSON.parse(window.localStorage.getItem("savedRecipes"))
 
   //remove this when done
   console.log(results)
 
-  const recipeInfo = results ? 
-    results.map(recipe => {
-        return <div className='recipes' key={recipe.title}>
-            <h5 className='recipe-title'> {recipe.title} </h5>
-                    <a href={`${recipe.url}`} target="_blank">
-                        <div className='recipe-image' style={{backgroundImage: `url(${recipe.image})`}}></div>
-                    </a>
-        </div>
-  }) : 'You have no saved recipes'
-
   return (
     <>
       <Link to='/'> <button>Home</button> </Link>
-      <div className='recipes'> {recipeInfo} </div>
-    </>
-    
+      {results ? <PaginatedResults recipes={results} query={'Your saved recipes'}/> : 'You have no saved recipes'}
+    </>   
   );
 }
 
