@@ -19,3 +19,5 @@ const results = JSON.parse(window.localStorage.getItem("savedRecipes"))
 }
 
 export default SavedRecipes;
+
+//navigate to paginated results with the saved recipes, if it is there, otherwise stay here.

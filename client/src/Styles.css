@@ -171,6 +171,7 @@ a {
 
 body {
     background-color: #4A5759;
+    margin-top:0
 }
 
 ::placeholder {
@@ -204,4 +205,44 @@ body {
 
 .random-button:hover {
  background-color: #D80032;
+}
+
+.results {
+    padding:2rem;
+    background-color: #EDAFB8;
+}
+
+.results-image :hover {
+    opacity: 0;
+}
+
+textarea:focus, input:focus{
+    outline: none;
+}
+
+input {
+    margin-left:1.5rem;
+}
+
+.navbar {
+    background-color:#4A5759;
+    height: 60px;
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.saved-button {
+    background-color:#EDAFB8;
+    border-radius: 10px;
+    height:50px;
+    width: 100px;
+    margin-right: 5rem;
+    border-style: none;
+    font-weight:bold;
+    color:white;
+}
+
+.saved-button:hover {
+    background-color:#D80032;
 }

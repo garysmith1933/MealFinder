@@ -43,14 +43,14 @@ const PaginatedResults = () => {
       )) : null
 
     return (
-        <>
+        <div className='results'>
         <Link to='/'><button> Back </button></Link>
-          <h1>Results for {query}</h1>
+          <h1 style={{color: 'white'}}>Results for {query}</h1>
           <Grid container spacing={{xs:2, md:3}}>
             {recipeInfo}
           </Grid>
           <Pagination sx={{display: 'flex', justifyContent:'center', marginTop: '1.5rem'}}count={Math.ceil(pagination.count/pageSize)} onChange={handlePageChange} />
-        </>   
+        </div>   
     )
 }
 
