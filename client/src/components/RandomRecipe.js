@@ -1,10 +1,38 @@
-const Random = () => {
+import { getRandomRecipe } from "../store/random";
+import {connect} from 'react-redux'
+import { useNavigate } from "react-router-dom";
+import {useState, useEffect} from 'react'
+
+const Random = ({getRandomRecipe, recipes}) => {
+    const navigate = useNavigate()
+    const [gotRecipeResults, setGotRecipeResults] = useState(false)
+
+    const getRecipe = async() => {
+        await getRandomRecipe()
+        setGotRecipeResults(true)
+    }
+
+    useEffect(() => {
+        if (gotRecipeResults) navigate('/randomResult', {state: {currentRecipe:recipes}})
+    },[gotRecipeResults])
+
     return (
-        <div>
-            <h1 style={{display:'flex', justifyContent:'center', alignItems: 'center', fontWeight:'bold'}}> Coming soon</h1>
+        <div className='random'>
+          <h1 className='random-title'> Not sure what you want? Let us pick! </h1>
+          <button className='random-button' onClick={() => getRecipe()}>Pick for me!</button>
         </div>
     )
 }
 
+const mapStateToProps = (state) => {
+    const {recipes} = state.randomRecipe
+    return {recipes}
+}
 
-export default Random
+const mapDispatchToProps = (dispatch) => {
+    return {
+        getRandomRecipe: async() => await dispatch(getRandomRecipe())
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Random);

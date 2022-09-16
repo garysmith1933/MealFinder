@@ -7,8 +7,8 @@ import {Link} from 'react-router-dom'
 
 const pageSize = 8;
 
-const PaginatedResults = () => {
-    const {recipes, query} = useLocation().state
+const PaginatedResults = (props) => {
+    const {recipes, query} = useLocation().state || props
     console.log(useLocation())
     const [currentRecipes, setCurrentRecipes] = useState(recipes)
     console.log(currentRecipes)
@@ -44,7 +44,6 @@ const PaginatedResults = () => {
 
     return (
         <div className='results'>
-        <Link to='/'><button> Back </button></Link>
           <h1 style={{color: 'white'}}>Results for {query}</h1>
           <Grid container spacing={{xs:2, md:3}}>
             {recipeInfo}

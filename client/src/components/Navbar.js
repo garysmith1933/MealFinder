@@ -4,8 +4,8 @@ const Navbar = () => {
     const navigate = useNavigate()
     return (
         <div className='navbar'>
-            <h1> Text </h1>
-            <button className='saved-button' onClick={() => navigate('/savedRecipes')}>SavedRecipes</button>
+            <h1 onClick={() => navigate('/')} style={{marginLeft:'1rem'}} className='main-title'> MealFinder </h1>
+            <button className='saved-button' onClick={() => navigate('/savedRecipes')}>Saved Recipes</button>
         </div>
     )
 }

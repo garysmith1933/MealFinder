@@ -175,9 +175,9 @@ body {
 }
 
 ::placeholder {
-    padding:1.5rem;
+    padding:0.5rem;
   }
-  
+
 .random {
     width:80%;
     height: 150px;
@@ -222,7 +222,9 @@ textarea:focus, input:focus{
 
 input {
     margin-left:1.5rem;
+    text-indent: 1rem;
 }
+
 
 .navbar {
     background-color:#4A5759;
@@ -235,14 +237,38 @@ input {
 .saved-button {
     background-color:#EDAFB8;
     border-radius: 10px;
-    height:50px;
+    height:40px;
     width: 100px;
     margin-right: 5rem;
     border-style: none;
     font-weight:bold;
     color:white;
+    padding-top:'2rem'
 }
 
 .saved-button:hover {
     background-color:#D80032;
+}
+
+h1 {
+    color:white;
+}
+
+.main-title:hover {
+    color:#EDAFB8;
+}
+
+.randomRecipe {
+    width:50%;
+    display: flex;
+    background-color: #EDAFB8;
+    border-radius: 10px;
+    flex-direction:column;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+}
+
+.image:hover {
+    opacity: 70%;
 }

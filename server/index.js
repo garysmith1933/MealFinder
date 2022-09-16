@@ -48,6 +48,26 @@ app.post('/cuisineRecipes', async (req,res,next) => {
     }
 })
 
+app.post('/randomRecipe', async (req,res,next) => {
+    try {
+        const apiKey = `apiKey=${process.env.REACT_APP_KEY}`
+        const api = "https://api.spoonacular.com/recipes/random?"
+        const recipeInfo = '&addRecipeInformation=true'
+        const number = '&number=1'
+        const url = api + apiKey + recipeInfo  + number 
+        const data = await fetch(url)
+        const json = await data.json()
+        console.log(json)
+        res.send(json)
+    } 
+    
+    catch (err) {
+        next(err)
+    }
+})
+
+
+
 
 
 
