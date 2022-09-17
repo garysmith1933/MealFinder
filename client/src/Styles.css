@@ -48,7 +48,6 @@ body {
     background-color: yellow;
   }
 
-
 .slick-slide > div {
   margin: 0 25px;
 }
@@ -75,6 +74,7 @@ body {
 .cuisine-title {
     text-align: center;
     margin-top: 3rem;
+    color:white;
 }
 
 .cuisine-name {
@@ -142,6 +142,7 @@ a {
     font-size: 24px;
     color: white;
     margin-left: 4rem;
+    margin-top: 0.5rem;
 }
 
 .landing-search {

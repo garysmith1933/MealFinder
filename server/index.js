@@ -20,7 +20,6 @@ app.post('/recipeResults', async (req,res,next) => {
         const url = api + apiKey + ingredients + recipeInfo  + number + sort 
         const data = await fetch(url)
         const json = await data.json()
-        
         res.send(json)
     } 
     
@@ -58,26 +57,10 @@ app.post('/randomRecipe', async (req,res,next) => {
         const url = api + apiKey + recipeInfo  + number 
         const data = await fetch(url)
         const json = await data.json()
-        console.log(json)
         res.send(json)
     } 
     
     catch (err) {
-        next(err)
-    }
-})
-
-
-
-
-
-
-app.get('/', (req,res,next) => {
-    try {
-        res.send('working')
-    } 
-    
-    catch(err) {
         next(err)
     }
 })

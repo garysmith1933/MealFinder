@@ -15,7 +15,6 @@ const Home = () => {
                 </div>
                 <img className='landing-image' src={dinner} alt='dinner'/>
             </div>
-
             <RandomRecipe/>
             <CuisineResults/>
         </div>

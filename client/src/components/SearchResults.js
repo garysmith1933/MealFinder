@@ -11,9 +11,6 @@ function SearchResults({getRecipes,state}) {
   const [searchQuery, setSearchQuery] = useState('')
   const [gotRecipeResults, setGotRecipeResults] = useState(false)
  
-  //remove this when done
-  console.log(state)
-
   const searchResults = async() => {
     console.log('this is running')
     await getRecipes(query)
@@ -32,9 +29,7 @@ function SearchResults({getRecipes,state}) {
             <input className='landing-search' type='text' placeholder="Search" onChange={(ev) => setQuery(ev.target.value)} />
             <div className='searchIcon' onClick={() => searchResults()}><SearchIcon/></div>
         </div>
-    </>
-   
-    
+    </>   
   );
 }
 

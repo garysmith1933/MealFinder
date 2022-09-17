@@ -1,12 +1,11 @@
 import Slider from "react-slick";
-import Cuisines from '../Cuisines.js'
+import cuisines from '../cuisines.js'
 import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'
 import { getCuisineRecipes } from '../store/cuisines'
 import {connect} from 'react-redux'
 import { useState, useEffect } from "react";
 import {useNavigate} from 'react-router-dom'
-
 
 const CuisineResults = ({getCuisineRecipes, state}) => {
   const navigate = useNavigate()
@@ -63,7 +62,7 @@ const CuisineResults = ({getCuisineRecipes, state}) => {
         <div className='slide-container'>
           <h3 className='cuisine-title'>Search by Cuisine</h3>
         <Slider {...settings}>
-            {Cuisines.map(cuisine => {
+            {cuisines.map(cuisine => {
                 return (
                   <div className='cuisine-container' key={cuisine.id}>
                     <img className='cuisines' src={cuisine.image} alt={cuisine.name}/>  
@@ -79,7 +78,6 @@ const CuisineResults = ({getCuisineRecipes, state}) => {
       )
 
 }
-
 
 const mapState = (state) => {
   console.log(state)

@@ -20,7 +20,8 @@ const RandomResult = ({getRandomRecipe, randomRecipe}) => {
         return (
             <div className='randomRecipe'>
                 <SingleRecipe title={recipe.title} url={recipe.sourceUrl} image={recipe.image}/>
-                <h1> Not happy with this recipe? <br/> Feel free to try again!</h1>
+                <h1 style={{marginBottom: '0.5rem'}}> Not happy with this recipe?</h1>
+                <h2 style={{color:'white', marginTop:'0'}}>Feel free to try again!</h2>
                 <button className='random-button' onClick={() => getNewRecipe()}>Pick for me!</button>
             </div>
         )
