@@ -7,10 +7,8 @@ export const addToStorage = (title, url, image) => {
     }
 
     else {
-        const isAlreadySaved = savedRecipes.find(recipe => recipe.title === title)
-        
+        const isAlreadySaved = savedRecipes.find(recipe => recipe.title === title) 
         if(isAlreadySaved === undefined) savedRecipes.push({"title": title, "url": url, "image":image})
-
         window.localStorage.setItem("savedRecipes",JSON.stringify(savedRecipes))
     }
   }
