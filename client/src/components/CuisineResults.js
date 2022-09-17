@@ -1,5 +1,5 @@
 import Slider from "react-slick";
-import Cuisines from '../cuisines.js'
+import Cuisines from '../Cuisines.js'
 import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'
 import { getCuisineRecipes } from '../store/cuisines'
