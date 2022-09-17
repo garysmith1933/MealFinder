@@ -3,9 +3,11 @@ const express = require("express");
 const fetch = require('node-fetch');
 const PORT = process.env.PORT || 3001;
 const app = express();
+const path = require('path')
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+app.use(express.static(path.join(__dirname, 'client/build')));
 
 app.post('/recipeResults', async (req,res,next) => {
     try {
