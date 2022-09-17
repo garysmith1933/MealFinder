@@ -7,7 +7,6 @@ const path = require('path');
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use(express.static('public'));
 app.use(express.static(path.join(__dirname, 'client/build')));
 
 app.post('/recipeResults', async (req,res,next) => {
@@ -69,7 +68,7 @@ app.post('/randomRecipe', async (req,res,next) => {
 })
 
 app.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname + '/client/build/index.html'))
+    res.sendFile(path.join(__dirname, 'build', 'index.html'))
   });
   
 
