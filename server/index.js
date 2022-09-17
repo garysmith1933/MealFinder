@@ -17,8 +17,7 @@ app.post('/recipeResults', async (req,res,next) => {
         //for when setting up a specific time
         // const maxReadyTime = '&maxReadyTime=40'
         const number = '&number=30'
-        console.log(ingredients)
-        const url = api + apiKey + ingredients + recipeInfo  + number + sort
+        const url = api + apiKey + ingredients + recipeInfo  + number + sort 
         const data = await fetch(url)
         const json = await data.json()
         

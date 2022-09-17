@@ -2,7 +2,7 @@ import {Card,CardMedia, CardContent, Typography, Button} from '@mui/material'
 import {addToStorage} from "../storage.js"
 
 export default function SingleRecipe({title, image, url}) {
-    title = title.length > 35 ? `${title.slice(0,35)}...` : title
+    title = title.length > 30 ? `${title.slice(0,30)}...` : title
     return (
         <div className='single-recipe'>
             <a href={url} alt={title} target='_blank'>
