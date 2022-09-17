@@ -13,11 +13,12 @@ app.post('/recipeResults', async (req,res,next) => {
         const api = "https://api.spoonacular.com/recipes/complexSearch?"
         const ingredients = `&query=${req.body.ingredients}`
         const recipeInfo = '&addRecipeInformation=true'
+        const sort = '&sort=random'
         //for when setting up a specific time
         // const maxReadyTime = '&maxReadyTime=40'
         const number = '&number=30'
         console.log(ingredients)
-        const url = api + apiKey + ingredients + recipeInfo  + number 
+        const url = api + apiKey + ingredients + recipeInfo  + number + sort
         const data = await fetch(url)
         const json = await data.json()
         
@@ -37,7 +38,8 @@ app.post('/cuisineRecipes', async (req,res,next) => {
         const cuisine = `&cuisine=${req.body.cuisine}`
         const recipeInfo = '&addRecipeInformation=true'
         const number = '&number=30'
-        const url = api + apiKey + query + cuisine + recipeInfo  + number 
+        const sort = '&sort=random'
+        const url = api + apiKey + query + cuisine + recipeInfo  + number + sort
         const data = await fetch(url)
         const json = await data.json()
         res.send(json)
