@@ -1,3 +1,8 @@
+if (process.env.NODE_ENV !== 'production') {
+    require('dotenv').config();
+  }
+
+
 const express = require("express");
 const fetch = require('node-fetch');
 const app = express();
@@ -6,6 +11,7 @@ const path = require('path');
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'client/build')));
+
 
 app.post('/recipeResults', async (req,res,next) => {
     try {
@@ -68,5 +74,11 @@ app.post('/randomRecipe', async (req,res,next) => {
 app.get('*', (req,res) =>{
     res.sendFile(path.join(__dirname+'/client/build/index.html'));
 });
+
+const PORT = process.env.PORT || 3001;
+
+app.listen(PORT, () => {
+    console.log(`Server listening on ${PORT}`);
+  });
   
 module.exports = app;
