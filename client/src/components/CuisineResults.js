@@ -1,5 +1,5 @@
 import Slider from "react-slick";
-import cuisines from '../cuisines.js'
+import Cuisines from '../cuisines.js'
 import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'
 import { getCuisineRecipes } from '../store/cuisines'
@@ -62,7 +62,7 @@ const CuisineResults = ({getCuisineRecipes, state}) => {
         <div className='slide-container'>
           <h3 className='cuisine-title'>Search by Cuisine</h3>
         <Slider {...settings}>
-            {cuisines.map(cuisine => {
+            {Cuisines.map(cuisine => {
                 return (
                   <div className='cuisine-container' key={cuisine.id}>
                     <img className='cuisines' src={cuisine.image} alt={cuisine.name}/>  
