@@ -2,6 +2,7 @@ import { useLocation } from 'react-router-dom'
 import { useEffect, useState } from 'react'
 import {Pagination, Grid,} from "@mui/material"
 import SingleRecipe from './SingleRecipe'
+import SingleSavedRecipe from './SingleSavedRecipe'
 
 const pageSize = 8;
 
@@ -15,7 +16,7 @@ const PaginatedResults = (props) => {
     })
 
     const pageTitle = query === 'Your Saved Recipes' ? query : `Results for ${query}`
-    
+  
     useEffect(() => {
         setPagination({...pagination, count:recipes.length})
         setCurrentRecipes(recipes.slice(pagination.start,pagination.end))
@@ -34,7 +35,8 @@ const PaginatedResults = (props) => {
     const recipeInfo = currentRecipes ? 
       currentRecipes.map(recipe => (
         <Grid item xs={12} sm={6} md={3} key={recipe.title} justifyContent='center'>
-          <SingleRecipe title={recipe.title} url={recipe.sourceUrl} image={recipe.image}/>
+        {query === 'Your Saved Recipes' ? <SingleSavedRecipe title={recipe.title} url={recipe.sourceUrl} image={recipe.image}/> :
+          <SingleRecipe title={recipe.title} url={recipe.sourceUrl} image={recipe.image}/>}
         </Grid>
       )) : null
 

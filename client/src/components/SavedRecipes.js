@@ -2,11 +2,15 @@ import '../Styles.css'
 import PaginatedResults from './PaginatedResults'
 
 function SavedRecipes() {
-const results = JSON.parse(window.localStorage.getItem("savedRecipes"))
+let results = JSON.parse(window.localStorage.getItem("savedRecipes")) 
 
   return (
     <>
-      {results ? <PaginatedResults recipes={results} query={'Your Saved Recipes'}/> : 'You have no saved recipes'}
+      {results ? <PaginatedResults recipes={results} query={'Your Saved Recipes'}/> : 
+      
+      <div style={{display:'flex', alignItems:'center', justifyContent:'center', color:'white'}}> 
+        <h1>You have no saved recipes</h1>
+      </div>}
     </>   
   );
 }
