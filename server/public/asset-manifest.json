@@ -1,0 +1,28 @@
+{
+  "files": {
+    "main.css": "/static/css/main.833ec4d2.css",
+    "main.js": "/static/js/main.7775e900.js",
+    "static/js/787.c4e7f8f9.chunk.js": "/static/js/787.c4e7f8f9.chunk.js",
+    "static/media/dinner.jpg": "/static/media/dinner.1442271df062908e878c.jpg",
+    "static/media/Indian.jpg": "/static/media/Indian.35aaad034de3852395f2.jpg",
+    "static/media/Japanese.jpg": "/static/media/Japanese.7c0c9f5e9b5289ae1c39.jpg",
+    "static/media/Chinese.jpg": "/static/media/Chinese.af36b62380d0d433c24f.jpg",
+    "static/media/Latin.jpeg": "/static/media/Latin.b6cd4856a06270404d1f.jpeg",
+    "static/media/Mexican.jpg": "/static/media/Mexican.0064cf0cd0c5a74a588a.jpg",
+    "static/media/Southern.jpg": "/static/media/Southern.39418da67faffa38bc3c.jpg",
+    "static/media/Caribbean.jpg": "/static/media/Caribbean.e060fbb57b8f91553fb7.jpg",
+    "static/media/American.jpg": "/static/media/American.2dad812fce59e03e4301.jpg",
+    "static/media/slick.svg": "/static/media/slick.2630a3e3eab21c607e21.svg",
+    "static/media/slick.eot": "/static/media/slick.a4e97f5a2a64f0ab1323.eot",
+    "static/media/slick.ttf": "/static/media/slick.c94f7671dcc99dce43e2.ttf",
+    "static/media/slick.woff": "/static/media/slick.295183786cd8a1389865.woff",
+    "index.html": "/index.html",
+    "main.833ec4d2.css.map": "/static/css/main.833ec4d2.css.map",
+    "main.7775e900.js.map": "/static/js/main.7775e900.js.map",
+    "787.c4e7f8f9.chunk.js.map": "/static/js/787.c4e7f8f9.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.833ec4d2.css",
+    "static/js/main.7775e900.js"
+  ]
+}
