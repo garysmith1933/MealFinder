@@ -78,6 +78,7 @@ app.get('*', (req,res) =>{
 const PORT = process.env.PORT || 3001;
 
 app.listen(PORT, () => {
+    console.log(path.join(__dirname, '..', 'client', 'build', 'index.html'))
     console.log(`Server listening on ${PORT}`);
   });
   
