@@ -6,9 +6,9 @@ let results = JSON.parse(window.localStorage.getItem("savedRecipes"))
 
   return (
     <>
-      {results ? <PaginatedResults recipes={results} query={'Your Saved Recipes'}/> : 
+      {results.length > 0 ? <PaginatedResults recipes={results} query={'Your Saved Recipes'}/> : 
       
-      <div style={{display:'flex', alignItems:'center', justifyContent:'center', color:'white'}}> 
+      <div className='results' style={{display:'flex', justifyContent:'center'}}> 
         <h1>You have no saved recipes</h1>
       </div>}
     </>   
