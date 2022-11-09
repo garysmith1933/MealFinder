@@ -194,14 +194,14 @@ body {
 }
 
 .random-button {
-    height:75px;
-    width: 125px;
+    height:50px;
     background-color:#4A5759;
     border-style:none;
     border-radius: 10px;
     color:white;
     font-size: 18px;
     margin-left: 1rem;
+    padding: 1rem;
 }
 
 .random-button:hover {
@@ -239,12 +239,11 @@ input {
     background-color:#EDAFB8;
     border-radius: 10px;
     height:40px;
-    width: 100px;
     margin-right: 5rem;
     border-style: none;
     font-weight:bold;
     color:white;
-    padding-top:'2rem'
+    padding:'1rem'
 }
 
 .saved-button:hover {
