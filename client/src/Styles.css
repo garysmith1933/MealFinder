@@ -166,10 +166,6 @@ a {
     border-radius: 0 10px 10px 0;
 }
 
-.searchIcon :hover {
-    color: #D80032;
-}
-
 body {
     background-color: #4A5759;
     margin-top:0
@@ -282,6 +278,7 @@ h1 {
   color:white;
   background-color:#D80032;
   transition: color, 0.5s;
+  margin-top: 0.25rem;
 }
 
 
