@@ -65,8 +65,8 @@ const CuisineResults = ({getCuisineRecipes, state}) => {
             {Cuisines.map(cuisine => {
                 return (
                   <div className='cuisine-container' key={cuisine.id}>
-                    <img className='cuisines' src={cuisine.image} alt={cuisine.name}/>  
-                    <p className="cuisine-name" onClick={() => getResults(cuisine.name)}> {cuisine.name} </p>  
+                    <img className='cuisine-image' src={cuisine.image} alt={cuisine.name}/>  
+                    <button className="cuisine-button button" onClick={() => getResults(cuisine.name)}> {cuisine.name} </button>  
                   </div>
                    
                 )    

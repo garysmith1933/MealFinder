@@ -38,16 +38,21 @@ body {
 }
 
 .button {
-    height: 100px;
-    width: 100px;
-    font-weight: bold;
-    font-size: 12;
+  height: 30px;
+  font-weight: 600;
+  border: none;
+  color:white;
+  background-color:#D80032;
+  transition: color, 0.5s;
+  margin-top: 0.25rem;
+  border-radius: 10px;
 }
 
-.button:hover {
-    background-color: yellow;
-  }
 
+.button:hover {
+  background-color:white;
+  color:#D80032;
+}
 .slick-slide > div {
   margin: 0 25px;
 }
@@ -64,7 +69,7 @@ body {
     margin-bottom: 3rem;
 }
 
-.cuisines {
+.cuisine-image {
     max-width: 100%;
     margin-top:0.5rem;
     border-radius: 10px;
@@ -100,6 +105,13 @@ body {
     background-color: green;
 }
 
+.cuisine-button {
+  border-radius: 5px;
+    display: block;
+    margin: 0 auto;
+    margin-top: 0.5rem;
+}
+
 .recipe-info {
     width:'100%';
     display: flex;
@@ -114,7 +126,6 @@ body {
 a {
     text-decoration: none;
 }
-
 
 .home {
     display: flex;
@@ -189,20 +200,14 @@ body {
     color:white;
 }
 
+/*1 */
 .random-button {
     height:50px;
-    background-color:#4A5759;
-    border-style:none;
-    border-radius: 10px;
-    color:white;
-    font-size: 18px;
+    font-size: 1.5rem;
     margin-left: 1rem;
-    padding: 1rem;
+    padding: 0.5rem;
 }
 
-.random-button:hover {
- background-color: #D80032;
-}
 
 .results {
     padding:2rem;
@@ -231,18 +236,16 @@ input {
     align-items: center;
 }
 
-.saved-button {
-    background-color:#EDAFB8;
-    border-radius: 10px;
-    height:40px;
+/*1 */
+.savedRecipes-button {
     margin-right: 5rem;
     border-style: none;
-    font-weight:bold;
-    color:white;
-    padding:'1rem'
+    height: 40px;
+    padding: 0.5rem;
+    border-radius: 5px;
 }
 
-.saved-button:hover {
+.saveRecipes-button:hover {
     background-color:#D80032;
 }
 

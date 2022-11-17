@@ -1,4 +1,4 @@
-import {Card,CardMedia, CardContent, Typography, Button} from '@mui/material';
+import {Card,CardMedia, CardContent, Typography} from '@mui/material';
 import {deleteFromStorage} from "../storage.js";
 
 export default function SingleSavedRecipe({title, image, url}) {
@@ -11,7 +11,7 @@ export default function SingleSavedRecipe({title, image, url}) {
                 </a>
                     <CardContent>
                         <Typography variant='h6'>{title}</Typography>
-                        <Button sx={{marginTop: '0.3rem', fontWeight: 'bold', backgroundColor: '#D80032', color: 'white'}} onClick={() => deleteFromStorage(title)}>Remove Recipe</Button>
+                        <button className='save-button button' onClick={() => deleteFromStorage(title)}>Remove Recipe</button>
                     </CardContent>
             </Card>
            
