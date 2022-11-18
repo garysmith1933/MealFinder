@@ -60,7 +60,7 @@ const CuisineResults = ({getCuisineRecipes, state}) => {
       return (
         <>
         <div className='slide-container'>
-          <h2 className='cuisine-title'>Search by Cuisine</h2>
+          <h2 className='cuisine-title'>Browse By Cuisine</h2>
         <Slider {...settings}>
             {Cuisines.map(cuisine => {
                 return (
