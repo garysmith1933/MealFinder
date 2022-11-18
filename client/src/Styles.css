@@ -186,14 +186,16 @@ body {
     padding:0.5rem;
   }
 
-.random {
-    width:80%;
-    height: 150px;
+.random-container {
+    width:100%;
+    height: 100px;
     background-color: #F08700;
     margin-top:1.5rem;
     display:flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
+    padding: 1rem;
 }
 
 .random-title {
@@ -202,10 +204,11 @@ body {
 
 /*1 */
 .random-button {
-    height:50px;
-    font-size: 1.5rem;
+    height:40px;
+    font-size: 1srem;
     margin-left: 1rem;
-    padding: 0.5rem;
+    padding: 0.6rem;
+    margin-bottom: 1rem;
 }
 
 
