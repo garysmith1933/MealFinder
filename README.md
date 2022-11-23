@@ -19,4 +19,4 @@ All the options provide recipes that are fetched from the Spoontacular API. Beca
 Users also have the ability to save recipes they want for later use. This was simply done using local storage. 
 
 ## Lessons Learned:
-To be updated!
+• You can use one react component to display different types of data if they share a similar format instead of making multiple files to display only one set of data. 
