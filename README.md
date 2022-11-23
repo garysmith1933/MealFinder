@@ -1,4 +1,4 @@
-# Viz
+# Meal Finder
 An intereactive 3D audio visualizer for users to enjoy their favorite songs!
 
 **Link to project:** https://meal-finder-jbsl.onrender.com
