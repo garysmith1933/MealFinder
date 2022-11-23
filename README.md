@@ -1,5 +1,5 @@
 # Meal Finder
-An intereactive 3D audio visualizer for users to enjoy their favorite songs!
+An application made to help decide the next meal for those who are indecisive!
 
 **Link to project:** https://meal-finder-jbsl.onrender.com
 ![Screenshot](./client/src/assets/mealfinder.png)
