@@ -1,6 +1,6 @@
 import { useLocation } from 'react-router-dom'
 import { useEffect, useState } from 'react'
-import {Pagination, Grid,} from "@mui/material"
+import { Pagination, Grid } from "@mui/material"
 import SingleRecipe from './SingleRecipe'
 import SingleSavedRecipe from './SingleSavedRecipe'
 
