@@ -1,4 +1,5 @@
 import axios from 'axios'
+
 const LOAD_CUISINES = 'LOAD_CUISINES'
 
 export const cuisines = (state=[], action) => {
