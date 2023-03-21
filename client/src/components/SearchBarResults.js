@@ -1,9 +1,10 @@
+import '../Styles.css'
 import {getRecipes} from '../store/recipes'
 import {connect} from 'react-redux'
 import {useState,useEffect} from 'react'
-import '../Styles.css'
 import {useNavigate} from 'react-router-dom'
 import SearchIcon from '@mui/icons-material/Search';
+
 
 function SearchResults({getRecipes,state}) {
   const navigate = useNavigate()
@@ -22,13 +23,12 @@ function SearchResults({getRecipes,state}) {
     if (gotRecipeResults) navigate('/searchResults', {state: {recipes:state.recipes.results, query:searchQuery}})
   },[gotRecipeResults])
 
-
   return (
     <>
-        <div style={{display:'flex'}}>
-            <input className='landing-search' type='text' placeholder="Search" onChange={(ev) => setQuery(ev.target.value)} />
-            <div className='searchIcon' onClick={() => searchResults()}><SearchIcon/></div>
-        </div>
+      <div style={{display:'flex'}}>
+        <input className='landing-search' type='text' placeholder="Search" onChange={(ev) => setQuery(ev.target.value)} />
+        <div className='searchIcon' onClick={() => searchResults()}><SearchIcon/></div>
+      </div>
     </>   
   );
 }
@@ -36,9 +36,11 @@ function SearchResults({getRecipes,state}) {
 const mapState = (state) => {
   return {state};
 }
+
 const mapDispatch = (dispatch) => {
   return {
     getRecipes: async(query)=> await dispatch(getRecipes(query))
   }
 }
+
 export default connect(mapState, mapDispatch)(SearchResults);
