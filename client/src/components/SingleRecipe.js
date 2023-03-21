@@ -14,7 +14,6 @@ export default function SingleRecipe({title, image, url}) {
               <Typography variant='h6'>{title}</Typography>
               <button className='save-button button' onClick={() => addToStorage(title, url, image)}>Save Recipe</button>
             </CardContent>
-            
           </Card>
         </div>
     )
