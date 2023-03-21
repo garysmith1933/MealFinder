@@ -1,5 +1,5 @@
 import CuisineResults from './CuisineResults'
-import SearchResults from './SearchResults';
+import SearchBarResults from './SearchBarResults';
 import RandomRecipe from './RandomRecipe';
 
 const dinner= require('../assets/dinner.jpg')
@@ -11,7 +11,7 @@ const Home = () => {
                 <div className='landing-content'>
                     <h1 className='landing-title'> Wondering What's <br/> For Dinner? </h1>
                     <p className='CTA'>Let us help you choose your next meal!</p>
-                    <SearchResults/>
+                    <SearchBarResults/>
                 </div>
                 <img className='landing-image' src={dinner} alt='dinner'/>
             </div>

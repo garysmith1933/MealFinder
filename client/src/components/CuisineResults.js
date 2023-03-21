@@ -60,13 +60,13 @@ const CuisineResults = ({getCuisineRecipes, state}) => {
       return (
         <>
         <div className='slide-container'>
-          <h2 className='cuisine-title'>Search by Cuisine</h2>
+          <h2 className='cuisine-title'>Browse By Cuisine</h2>
         <Slider {...settings}>
             {Cuisines.map(cuisine => {
                 return (
                   <div className='cuisine-container' key={cuisine.id}>
-                    <img className='cuisines' src={cuisine.image} alt={cuisine.name}/>  
-                    <p className="cuisine-name" onClick={() => getResults(cuisine.name)}> {cuisine.name} </p>  
+                    <img className='cuisine-image' src={cuisine.image} alt={cuisine.name}/>  
+                    <button className="cuisine-button button" onClick={() => getResults(cuisine.name)}> {cuisine.name} </button>  
                   </div>
                    
                 )    
