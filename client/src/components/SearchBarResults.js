@@ -5,7 +5,6 @@ import {useState,useEffect} from 'react'
 import {useNavigate} from 'react-router-dom'
 import SearchIcon from '@mui/icons-material/Search';
 
-
 function SearchResults({getRecipes,state}) {
   const navigate = useNavigate()
   const [query, setQuery] = useState('');
@@ -13,7 +12,6 @@ function SearchResults({getRecipes,state}) {
   const [gotRecipeResults, setGotRecipeResults] = useState(false)
  
   const searchResults = async() => {
-    console.log('this is running')
     await getRecipes(query)
     setSearchQuery(query)
     setGotRecipeResults(true)
@@ -39,7 +37,7 @@ const mapState = (state) => {
 
 const mapDispatch = (dispatch) => {
   return {
-    getRecipes: async(query)=> await dispatch(getRecipes(query))
+    getRecipes: async(query) => await dispatch(getRecipes(query))
   }
 }
 
