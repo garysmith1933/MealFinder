@@ -34,7 +34,6 @@ const RandomResult = ({getRandomRecipe, randomRecipe}) => {
     )
 }
 
-
 const mapStateToProps = (state) => {
   const {randomRecipe} = state
   return {randomRecipe}
