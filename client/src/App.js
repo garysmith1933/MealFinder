@@ -5,7 +5,7 @@ import PaginatedResults from "./components/PaginatedResults.js";
 import Navbar from "./components/Navbar.js";
 import RandomResult from "./components/RandomResult.js";
 
-function App() {
+const App = () => {
  return (
   <>
     <Navbar/>
@@ -18,7 +18,6 @@ function App() {
       </Routes>
     </div>
   </>
-  
  );
 }
 

@@ -1,5 +1,5 @@
-import {Card,CardMedia, CardContent, Typography} from '@mui/material';
-import {deleteFromStorage} from "../storage.js";
+import { Card,CardMedia, CardContent, Typography } from '@mui/material';
+import { deleteFromStorage } from "../utils/storage.js";
 
 export default function SingleSavedRecipe({title, image, url}) {
     title = title.length > 30 ? `${title.slice(0,30)}...` : title
