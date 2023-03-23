@@ -1,9 +1,7 @@
-import '../Styles.css'
 import PaginatedResults from './PaginatedResults'
 
 function SavedRecipes() {
-let results = JSON.parse(window.localStorage.getItem("savedRecipes")) 
-
+  let results = JSON.parse(window.localStorage.getItem("savedRecipes")) 
   return (
     <>
       {!results || results.length === 0 ? 
