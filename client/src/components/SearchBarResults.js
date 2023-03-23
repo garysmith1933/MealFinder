@@ -22,9 +22,9 @@ function SearchResults({getRecipes,state}) {
 
   return (
     <>
-      <div style={{display:'flex'}}>
-        <input className='landing-search' type='text' placeholder="Search" onChange={(ev) => setQuery(ev.target.value)} />
-        <div className='searchIcon' onClick={() => searchResults()}><SearchIcon/></div>
+      <div className='search'>
+        <input className='search-input' type='text' placeholder="Ex: Chicken" onChange={(ev) => setQuery(ev.target.value)} />
+        <button className='search-button' onClick={() => searchResults()}>Search</button>
       </div>
     </>   
   );

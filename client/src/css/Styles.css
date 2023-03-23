@@ -1,5 +1,6 @@
 body {
-  background: whitesmoke
+  background: whitesmoke;
+  font-family: 'Outfit', sans-serif;
 }
 
 .content {
@@ -126,10 +127,6 @@ a {
     text-decoration: none;
 }
 
-
-::placeholder {
-    padding:0.5rem;
-  }
 
 .random-container {
     width:100%;
