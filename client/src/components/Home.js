@@ -1,9 +1,12 @@
 import CuisineResults from './CuisineResults'
 import SearchBarResults from './SearchBarResults';
 import RandomRecipe from './RandomRecipe';
+import Navbar from "./Navbar.js";
 
 const Home = () => {
   return (
+    <>
+    <Navbar/>
     <div className='main'>
       <div className='home'> 
         <div className='landing-content'>
@@ -16,6 +19,7 @@ const Home = () => {
       <CuisineResults/>
       <RandomRecipe/>
     </div>
+    </>
     )
 }
 

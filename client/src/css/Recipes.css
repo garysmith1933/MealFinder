@@ -16,6 +16,12 @@
   opacity: 0;
 }
 
+.recipe-title {
+  margin-bottom: 1rem;
+  padding: 0.5rem;
+}
+
+
 .save-delete-button {
   height: 40px;
   width: 100px;
