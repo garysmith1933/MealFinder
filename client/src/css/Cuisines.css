@@ -1,0 +1,111 @@
+.main-cuisine-container {
+  background-color: white;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.cuisine-container {
+    width:100%;
+    background-color: white;
+    margin-bottom: 3rem;
+    display: grid;
+    grid-template-columns: repeat(4, 300px);
+    grid-template-rows: repeat(2, 400px);
+    justify-content: center;
+    align-items: center;
+    grid-column-gap: 3rem;
+    grid-row-gap: 1px;
+}
+
+.single-cuisine-container {
+  color:black;
+  position: relative;
+}
+
+.cuisine-name {
+  color:black;
+  font-weight: 300;
+  margin-bottom: 0
+}
+
+.cuisine-description {
+  margin-top: 0
+}
+
+.cuisine-image {
+    max-width: 100%;
+    margin-top:0.5rem;
+    border-radius: 10px;
+    height:200px;
+}
+
+.cuisine-title {
+    text-align: center;
+    margin-top: 3rem;
+    color: black;
+    margin-bottom: 0;
+    font-weight: 500;
+}
+
+.cuisine-sub-title {
+  font-weight: 300
+}
+
+.cuisine-recipes {
+    height: 330px;
+    width: 300px;
+    border-radius: 5px;
+    margin-bottom:1rem;
+    background-color: green;
+}
+
+.cuisine-button {
+  border-radius: 5px;
+    display: block;
+    margin: 0 auto;
+    margin-top: 0.5rem;
+}
+
+.cuisine-image:hover {
+  opacity: 0.5;
+  cursor:pointer
+}
+
+.cuisine-name:hover {
+  color:#058C42;
+  cursor: pointer;
+}
+
+@media(max-width: 80em) {
+  .cuisine-container {
+    grid-template-columns: repeat(3, 250px);
+    /* change this for more space to fill in content */
+    grid-template-rows: repeat(4, 400px);
+  }
+}
+
+@media(max-width: 50em) {
+  .cuisine-container {
+    grid-template-columns: repeat(2, 200px);
+  }
+
+  .cuisine-title {
+    font-size: 1.8rem
+  }
+
+  .cuisine-name {
+    font-size: 1.2rem
+  }
+
+  .cuisine-sub-title {
+    font-size: 1rem;
+  }
+
+  .cuisine-description {
+    font-size: 2px
+  }
+  
+}

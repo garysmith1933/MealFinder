@@ -22,57 +22,23 @@ const CuisineResults = ({getCuisineRecipes, state}) => {
     if (gotRecipeResults) navigate('/searchResults', {state: {recipes:state.cuisines.results, query:cuisine}})
   },[gotRecipeResults])
 
-  const settings = {
-    dots: true,
-    lazyLoad: true,
-    infinite: false,
-    slidesToShow: 3,
-    slidesToScroll: 1,
-    initialSlide: 0,
-    responsive: [
-      {
-        breakpoint: 1024,
-        settings: {
-          slidesToShow: 3,
-          slidesToScroll: 2,
-          infinite: true,
-          dots: true
-        }
-      },
-
-      {
-        breakpoint: 600,
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1,
-          initialSlide: 2
-        }
-      },
-
-      {
-        breakpoint: 480,
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1
-        }
-      }
-    ]};
-
-      return (
-        <div className='slide-container'>
-          <h2 className='cuisine-title'>Browse By Cuisine</h2>
-          <Slider {...settings}>
-            {Cuisines.map(cuisine => {
-              return (
-                <div className='cuisine-container' key={cuisine.id}>
-                  <img className='cuisine-image' src={cuisine.image} alt={cuisine.name}/>  
-                  <button className="cuisine-button button" onClick={() => getResults(cuisine.name)}> {cuisine.name} </button>  
-                </div>    
-              )    
-            })}
-          </Slider>
-        </div>       
-      )
+  return (
+    <div className="main-cuisine-container">
+      <h1 className='cuisine-title'>Cuisines</h1>
+      <h3 className='cuisine-sub-title'>Check out or collection of recipes to make your search a bit easier.</h3>
+      <div className='cuisine-container'>
+          {Cuisines.map(cuisine => {
+            return (
+              <div className='single-cuisine-container' key={cuisine.id}>
+                <img className='cuisine-image' onClick={() => getResults(cuisine.name)} src={cuisine.image} alt={cuisine.name}/>  
+                <h2 className="cuisine-name" onClick={() => getResults(cuisine.name)}>{cuisine.name}</h2>
+                <p classname='cuisine-description'>{cuisine.description}</p>
+              </div> 
+            )    
+          })}
+      </div>   
+    </div>    
+    )
 }
 
 const mapState = (state) => {

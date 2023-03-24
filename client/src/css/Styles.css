@@ -39,65 +39,6 @@ body {
 }
 
 
-.slick-slide > div {
-  margin: 0 25px;
-}
-.slick-list {
-  margin: 0 -10px;
-}
-
-.slide-container {
-    width:50%;
-    background-color: #B3D89C;
-    border-radius:10px;
-    margin-top:1.5rem;
-    padding: 0 2rem 2rem 2rem;
-    margin-bottom: 3rem;
-}
-
-.cuisine-image {
-    max-width: 100%;
-    margin-top:0.5rem;
-    border-radius: 10px;
-    height:200px;
-}
-
-.cuisine-title {
-    text-align: center;
-    margin-top: 3rem;
-    color:white;
-}
-
-.cuisine-name {
-    text-align:center;
-    background-color: #D80032;
-    padding:0.5rem;
-    border-radius:10px;
-    color:white;
-    width: 50%;
-    margin-left: 3.5rem;
-    margin-top:2rem;
-}
-
-.cuisine-name:hover {
-    opacity: 50%;
-}
-
-.cuisine-recipes {
-    height: 330px;
-    width: 300px;
-    border-radius: 5px;
-    margin-bottom:1rem;
-    background-color: green;
-}
-
-.cuisine-button {
-  border-radius: 5px;
-    display: block;
-    margin: 0 auto;
-    margin-top: 0.5rem;
-}
-
 .recipe-info {
     width:'100%';
     display: flex;
