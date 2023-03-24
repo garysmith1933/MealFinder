@@ -72,27 +72,6 @@ input {
     text-indent: 1rem;
 }
 
-.navbar {
-    background-color:#4A5759;
-    height: 60px;
-    display:flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-/*1 */
-.savedRecipes-button {
-    margin-right: 5rem;
-    border-style: none;
-    height: 40px;
-    padding: 0.5rem;
-    border-radius: 5px;
-}
-
-.saveRecipes-button:hover {
-    background-color:#D80032;
-}
-
 h1 {
     color:white;
 }

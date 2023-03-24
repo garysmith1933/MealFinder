@@ -2,6 +2,7 @@ import './css/Styles.css'
 import './css/Home.css'
 import './css/RandomRecipe.css'
 import "./css/Cuisines.css"
+import "./css/Navbar.css"
 import { Routes, Route } from "react-router-dom";
 import Home from "./components/Home.js";
 import SavedRecipes from "./components/SavedRecipes.js";
@@ -12,7 +13,7 @@ import RandomResult from "./components/RandomResult.js";
 const App = () => {
  return (
   <>
-    {/* <Navbar/> */}
+    <Navbar/>
     <div> 
       <Routes>
         <Route path='/' element={<Home/>}/>
