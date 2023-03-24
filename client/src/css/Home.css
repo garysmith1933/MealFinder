@@ -14,7 +14,7 @@
   background-size: cover;
   background-size: 100%;
   height: 100%;
-  margin-top:0
+  margin-top:0;
 }
 
 .landing-content {
@@ -23,7 +23,9 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  justify-content: center
+  justify-content: center;
+  /* Not sure on the perfect spot for the search bar and text to be */
+  margin-left: 10rem;
 }
 
 .landing-title {
@@ -106,12 +108,21 @@
   br {
     display: none;
   }
+
+  .landing-content {
+    margin-left: 3rem
+  }
+ 
 }
 
 /* Phones May make further adjustments*/
 @media(max-width: 40em) {
   .landing-title {
     font-size: 2.0rem
+  }
+
+  .landing-content {
+    margin-left: 0rem
   }
 
   .CTA {
