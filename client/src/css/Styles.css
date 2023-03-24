@@ -4,19 +4,6 @@ body {
   margin-top: 0
 }
 
-.content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.recipes {
-    width:100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
 .recipe-title {
     margin-bottom: 1rem;
     padding: 0.5rem;
@@ -38,46 +25,18 @@ body {
     justify-content: space-between;
 }
 
-
-.recipe-info {
-    width:'100%';
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.recipe-name {
-    text-align:center;
-}
-
 a {
     text-decoration: none;
 }
 
-.results {
-    padding:2rem;
-    background-color: #EDAFB8;
-}
 
-.results-image :hover {
-    opacity: 0;
-}
-
-textarea:focus, input:focus{
+textarea:focus, input:focus {
     outline: none;
 }
 
 input {
     margin-left:1.5rem;
     text-indent: 1rem;
-}
-
-h1 {
-    color:white;
-}
-
-.main-title:hover {
-    color:#EDAFB8;
 }
 
 .randomRecipe {
@@ -93,22 +52,4 @@ h1 {
 
 .image:hover {
     opacity: 90%;
-}
-
-
-.save-button {
-  height: 30px;
-  font-weight: 600;
-  border: none;
-  border-radius: 5px;
-  color:white;
-  background-color:#D80032;
-  transition: color, 0.5s;
-  margin-top: 0.25rem;
-}
-
-
-.save-button:hover {
-  background-color:white;
-  color:#D80032;
 }

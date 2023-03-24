@@ -34,17 +34,17 @@ const PaginatedResults = (props) => {
 
   const recipeInfo = currentRecipes ? 
     currentRecipes.map(recipe => (
-      <Grid item xs={12} sm={6} md={3} key={recipe.title} justifyContent='center'>
-        {query === 'Your Saved Recipes' ? <SingleSavedRecipe title={recipe.title} url={recipe.sourceUrl} image={recipe.image}/> :
+      <Grid item xs={12} sm={6} md={4} lg={3} align='center' key={recipe.title} justifyContent='center'>
+        {query === 'Your Saved Recipes' ? <SingleSavedRecipe title={recipe.title} url={recipe.sourceUrl} image={recipe.image} isSavedRecipe={props.isSavedRecipe}/> :
         <SingleRecipe title={recipe.title} url={recipe.sourceUrl} image={recipe.image}/>}
       </Grid>
       )) : null
 
   return (
-    <div className='results'>
-      <h1>{pageTitle}</h1>
+    <div className='results-container'>
+      <h1 classname>{pageTitle}</h1>
 
-      <Grid container spacing={{xs:2, md:3}}>
+      <Grid container justify="center" spacing={{xs:2, md:3}}>
         {recipeInfo}
       </Grid>
 

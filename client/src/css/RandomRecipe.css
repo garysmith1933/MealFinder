@@ -33,22 +33,6 @@
   margin-top: 1rem;
 }
 
-.button {
-  height: 30px;
-  font-weight: 600;
-  border: none;
-  color:white;
-  background-color:#D80032;
-  transition: color, 0.5s;
-  margin-top: 0.25rem;
-  border-radius: 10px;
-}
-
-.button:hover {
-  background-color:white;
-  color:#D80032;
-}
-
 .random-button:hover {
   color:#058C42
 }

@@ -8,7 +8,7 @@ function SavedRecipes() {
       <div className='results' style={{display:'flex', justifyContent:'center'}}> 
         <h1>You have no saved recipes</h1>
       </div> :
-      <PaginatedResults recipes={results} query={'Your Saved Recipes'}/>}
+      <PaginatedResults recipes={results} query={'Your Saved Recipes'} isSavedRecipe={true}/>}
     </>   
   );
 }
