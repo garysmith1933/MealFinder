@@ -21,6 +21,11 @@ Users also have the ability to save recipes they want for later use. This was si
 ## Lessons Learned:
 • You can use one react component to display different types of data if they share a similar format instead of making multiple files to display only one set of data. 
 
+## Optimizations:
+  A list of things I plan on doing in the near future
+  • Implementing Typescript on client side.
+
+
   
 
 
