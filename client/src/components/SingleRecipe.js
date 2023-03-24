@@ -11,6 +11,7 @@ export default function SingleRecipe({title, image, url, isSavedRecipe}) {
 
     else {
       addToStorage(title, url, image)
+      alert('Recipe Saved')
     }
   } 
     title = title.length > 30 ? `${title.slice(0,30)}...` : title
