@@ -1,0 +1,40 @@
+.random-recipe-container {
+  width:100%;
+  display: flex;
+  background-color: #28282B ;
+  flex-direction:column;
+  justify-content: center;
+  align-items: center;
+  height:100vh
+}
+
+.random-recipe-container > h3 {
+  color: white;
+  margin-top: 0;
+  font-weight: 300;
+}
+
+.random-recipe-container > h1 {
+  color: white;
+  font-weight: 300;
+}
+
+.random-recipe-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #058C42;
+  height: 50px;
+  width: 125px;
+  font-weight: bold;
+  color:white;
+  border-radius: 5px;
+  border: none;
+  transition: color, 0.5s, 
+}
+
+.random-recipe-button:hover {
+  background-color:white;
+  color:#058C42;
+  border: 1px solid #058C42;
+}

@@ -18,11 +18,11 @@ const RandomResult = ({getRandomRecipe, randomRecipe}) => {
 
   const recipeInfo = recipe.map(recipe => {
     return (
-      <div className='randomRecipe'>
+      <div className='random-recipe-container'>
         <SingleRecipe title={recipe.title} url={recipe.sourceUrl} image={recipe.image}/>
-        <h1 style={{marginBottom: '0.5rem'}}> Not happy with this recipe?</h1>
-        <h2 style={{color:'white', marginTop:'0'}}>Feel free to try again!</h2>
-        <button className='random-button button' onClick={() => getNewRecipe()}>Pick for me!</button>
+        <h1> Not happy with this recipe?</h1>
+        <h3> Feel free to try again!</h3>
+        <button className='random-recipe-button' onClick={() => getNewRecipe()}>Pick for me!</button>
       </div>
       )
     })

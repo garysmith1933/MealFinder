@@ -18,8 +18,8 @@ const Random = ({getRandomRecipe, recipes}) => {
 
   return (
     <div className='random-container'>
-      <h2 className='random-title'> Not sure what you want? Let us pick! </h2>
-      <button className='random-button button' onClick={() => getRecipe()}>Pick for me!</button>
+      <h2 className='random-title'>Not sure what you want?</h2>
+      <button className='random-button' onClick={() => getRecipe()}>Pick for me!</button>
     </div>
   )
 }

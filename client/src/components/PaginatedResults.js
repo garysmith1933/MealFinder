@@ -2,7 +2,7 @@ import { useLocation } from 'react-router-dom'
 import { useEffect, useState } from 'react'
 import { Pagination, Grid } from "@mui/material"
 import SingleRecipe from './SingleRecipe'
-import SingleSavedRecipe from './SingleSavedRecipe'
+import { Homebar } from './Homebar'
 
 const pageSize = 8;
 
@@ -15,8 +15,11 @@ const PaginatedResults = (props) => {
     end: pageSize
   })
 
-  const pageTitle = query === 'Your Saved Recipes' ? query : `Results for ${query}`
-  
+  const getPageTitle = () => {
+    if (query === 'Your Saved Recipes') return query
+    return `Results for ${query} Cuisine`
+  }
+
   useEffect(() => {
     setPagination({...pagination, count:recipes.length})
     setCurrentRecipes(recipes.slice(pagination.start,pagination.end))
@@ -34,22 +37,24 @@ const PaginatedResults = (props) => {
 
   const recipeInfo = currentRecipes ? 
     currentRecipes.map(recipe => (
-      <Grid item xs={12} sm={6} md={3} key={recipe.title} justifyContent='center'>
-        {query === 'Your Saved Recipes' ? <SingleSavedRecipe title={recipe.title} url={recipe.sourceUrl} image={recipe.image}/> :
-        <SingleRecipe title={recipe.title} url={recipe.sourceUrl} image={recipe.image}/>}
+      <Grid item xs={12} sm={6} md={4} lg={3} align='center' key={recipe.title} justifyContent='center'>
+        <SingleRecipe title={recipe.title} url={recipe.sourceUrl} image={recipe.image} isSavedRecipe={props.isSavedRecipe}/>
       </Grid>
       )) : null
 
   return (
-    <div className='results'>
-      <h1>{pageTitle}</h1>
+    <>
+      <Homebar/>
+      <div className='results-container'>
+        <h1 className='cuisine-title' style={{marginBottom: '1.5rem'}}>{getPageTitle()}</h1>
 
-      <Grid container spacing={{xs:2, md:3}}>
-        {recipeInfo}
-      </Grid>
+        <Grid container justify="center" spacing={{xs:2, md:3}}>
+          {recipeInfo}
+        </Grid>
 
-      <Pagination sx={{display: 'flex', justifyContent:'center', marginTop: '1.5rem'}}count={Math.ceil(pagination.count/pageSize)} onChange={handlePageChange} />
-    </div>   
+        <Pagination sx={{display: 'flex', justifyContent:'center', marginTop: '1.5rem'}}count={Math.ceil(pagination.count/pageSize)} onChange={handlePageChange} />
+      </div>   
+    </>
     )
 }
 

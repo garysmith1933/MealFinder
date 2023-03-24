@@ -1,0 +1,23 @@
+body {
+  background: whitesmoke;
+  font-family: 'Outfit', sans-serif;
+  margin-top: 0
+}
+
+a {
+    text-decoration: none;
+}
+
+
+textarea:focus, input:focus {
+    outline: none;
+}
+
+input {
+    margin-left:1.5rem;
+    text-indent: 1rem;
+}
+
+.image:hover {
+    opacity: 90%;
+}

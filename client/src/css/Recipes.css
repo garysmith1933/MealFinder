@@ -1,0 +1,58 @@
+.results-container {
+  background-color: offwhite;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+}
+
+.results-title {
+  color: black;
+  font-weight: 300;
+}
+
+.results-image :hover {
+  opacity: 0;
+}
+
+.recipe-title {
+  margin-bottom: 1rem;
+  padding: 0.5rem;
+}
+
+
+.save-delete-button {
+  height: 40px;
+  width: 100px;
+  font-weight: 600;
+  border: none;
+  border-radius: 5px;
+  color:white;
+  background-color: #058C42;
+  transition: color, 0.5s;
+  margin-top: 0.25rem;
+  margin-bottom: 1rem;
+  margin-left: 0.5rem;
+}
+
+.save-delete-button:hover {
+  background-color:white;
+  color:#058C42;
+  border: 1px solid #058C42;
+}
+
+@media(max-width: 80em) {
+  .recipe-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+  }  
+}
+  
+@media(max-width: 50em) {
+  .recipe-title {
+    font-size: 1rem
+  }   
+}
+
+
