@@ -2,7 +2,6 @@ import { useLocation } from 'react-router-dom'
 import { useEffect, useState } from 'react'
 import { Pagination, Grid } from "@mui/material"
 import SingleRecipe from './SingleRecipe'
-import SingleSavedRecipe from './SingleSavedRecipe'
 
 const pageSize = 8;
 
@@ -35,8 +34,7 @@ const PaginatedResults = (props) => {
   const recipeInfo = currentRecipes ? 
     currentRecipes.map(recipe => (
       <Grid item xs={12} sm={6} md={4} lg={3} align='center' key={recipe.title} justifyContent='center'>
-        {query === 'Your Saved Recipes' ? <SingleSavedRecipe title={recipe.title} url={recipe.sourceUrl} image={recipe.image} isSavedRecipe={props.isSavedRecipe}/> :
-        <SingleRecipe title={recipe.title} url={recipe.sourceUrl} image={recipe.image}/>}
+        <SingleRecipe title={recipe.title} url={recipe.sourceUrl} image={recipe.image} isSavedRecipe={props.isSavedRecipe}/>
       </Grid>
       )) : null
 
