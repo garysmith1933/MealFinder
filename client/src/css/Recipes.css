@@ -16,7 +16,7 @@
   opacity: 0;
 }
 
-.save-button {
+.save-delete-button {
   height: 40px;
   width: 100px;
   font-weight: 600;
@@ -30,7 +30,7 @@
   margin-left: 0.5rem;
 }
 
-.save-button:hover {
+.save-delete-button:hover {
   background-color:white;
   color:#058C42;
   border: 1px solid #058C42;

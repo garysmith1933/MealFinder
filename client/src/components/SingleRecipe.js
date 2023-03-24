@@ -23,7 +23,7 @@ export default function SingleRecipe({title, image, url, isSavedRecipe}) {
 
             <CardContent align='left'>
               <Typography className='recipe-title' variant='h6'>{title}</Typography>
-              <button className='save-button' onClick={() => addOrDeleteFromStorage(title, url, image)}>{text}</button>
+              <button className='save-delete-button' onClick={() => addOrDeleteFromStorage(title, url, image)}>{text}</button>
             </CardContent>
           </Card>
         </>

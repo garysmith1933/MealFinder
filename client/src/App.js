@@ -4,6 +4,7 @@ import './css/RandomRecipe.css'
 import "./css/Cuisines.css"
 import "./css/Navbar.css"
 import "./css/Recipes.css"
+import "./css/RandomResult.css"
 import { Routes, Route } from "react-router-dom";
 import Home from "./components/Home.js";
 import SavedRecipes from "./components/SavedRecipes.js";
