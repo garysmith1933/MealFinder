@@ -74,3 +74,33 @@
   font-size: 1rem;
   font-weight: 700;
 }
+
+/* Phones */
+@media(max-width: 40em) {
+  .landing-title {
+    font-size: 2.5rem
+  }
+
+  .CTA {
+    font-size: 1.2rem;
+  }
+
+  .home {
+    background-position: center;
+    background-size: cover;
+  }
+
+  .search {
+    width: 100%;
+    flex-direction: column;
+  }
+
+  .search-button {
+    margin-left: 4rem;
+    margin-top: 1rem
+  }
+
+  br {
+    display: none;
+  }
+}

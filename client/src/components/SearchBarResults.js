@@ -2,7 +2,6 @@ import { getRecipes } from '../store/recipes'
 import { connect } from 'react-redux'
 import { useState,useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
-import SearchIcon from '@mui/icons-material/Search';
 
 function SearchResults({getRecipes,state}) {
   const navigate = useNavigate()
