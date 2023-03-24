@@ -3,6 +3,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  background-color: black;
 }
 
 .home {
@@ -10,8 +11,10 @@
   background-image: url(../assets/burg.avif);
   background-repeat: no-repeat;
   background-position: bottom;
+  background-size: cover;
   background-size: 100%;
   height: 100%;
+  margin-top:0
 }
 
 .landing-content {
@@ -75,8 +78,8 @@
   font-weight: 700;
 }
 
-/* Phones */
-@media(max-width: 40em) {
+/* Tablets */
+@media(max-width: 80em) {
   .landing-title {
     font-size: 2.5rem
   }
@@ -86,7 +89,7 @@
   }
 
   .home {
-    background-position: center;
+    background-position: bottom;
     background-size: cover;
   }
 
@@ -102,5 +105,16 @@
 
   br {
     display: none;
+  }
+}
+
+/* Phones May make further adjustments*/
+@media(max-width: 40em) {
+  .landing-title {
+    font-size: 2.0rem
+  }
+
+  .CTA {
+    font-size: 1.2rem;
   }
 }
