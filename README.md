@@ -14,7 +14,7 @@ Meal Finder has 3 ways a user can go about getting recipe suggestions.
 
 Inputting ingredients in the search bar, browsing collections of cuisines(ex: American, Chinese, etc) and randomly using the random recipe feature.
 
-All the options provide recipes that are fetched from the Spoontacular API. Because the recipe data from each of them has a very similar format(title, url,), I was able to create one react component and utilize it multiple times to display the recipe results to the user based on the method they went about getting the recipes.
+All the options provide recipes that are fetched from the Spoontacular API. Because the recipe data from each of them has a very similar format (title, url, image), I was able to create one react component and utilize it multiple times to display the recipe results to the user based on the method they went about getting the recipes.
 
 Users also have the ability to save recipes they want for later use. This was simply done using local storage. 
 

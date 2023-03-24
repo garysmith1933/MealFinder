@@ -80,6 +80,11 @@
   font-weight: 700;
 }
 
+.search-button:hover {
+  cursor: pointer;
+  opacity: 90%;
+}
+
 /* Tablets */
 @media(max-width: 80em) {
   .landing-title {
