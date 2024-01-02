@@ -30,7 +30,7 @@
   color:white;
   border-radius: 5px;
   border: none;
-  transition: color, 0.5s, 
+  transition: color, 0.5s
 }
 
 .random-recipe-button:hover {
