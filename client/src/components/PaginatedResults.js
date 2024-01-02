@@ -2,6 +2,7 @@ import { useLocation } from 'react-router-dom'
 import { useEffect, useState } from 'react'
 import { Pagination, Grid } from "@mui/material"
 import SingleRecipe from './SingleRecipe'
+import { Navbar } from './Navbar'
 
 const pageSize = 8;
 
@@ -43,6 +44,7 @@ const PaginatedResults = (props) => {
 
   return (
     <>
+      <Navbar/>
       <div className='results-container'>
         <h1 className='cuisine-title' style={{marginBottom: '1.5rem'}}>{getPageTitle()}</h1>
 
