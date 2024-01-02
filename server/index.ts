@@ -19,7 +19,8 @@ app.post('/recipeResults', async (req: Request,res: Response, next: NextFunction
         const ingredients = `&query=${req.body.ingredients}`
         const recipeInfo = '&addRecipeInformation=true'
         const sort = '&sort=random'
-        // const maxReadyTime = '&maxReadyTime=40' # will add this as a feature soon.
+        //for when setting up a specific time
+        // const maxReadyTime = '&maxReadyTime=40'
         const number = '&number=30'
         const url = api + apiKey + ingredients + recipeInfo  + number + sort 
         const data = await fetch(url)
