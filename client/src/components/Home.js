@@ -1,7 +1,7 @@
 import CuisineResults from './CuisineResults'
 import SearchBarResults from './SearchBarResults';
 import RandomRecipe from './RandomRecipe';
-import Navbar from "./Navbar.js";
+import { Navbar } from "./Navbar.js";
 
 const Home = () => {
   return (

@@ -32,7 +32,7 @@ const CuisineResults = ({getCuisineRecipes, state}) => {
               <div className='single-cuisine-container' key={cuisine.id}>
                 <img className='cuisine-image' onClick={() => getResults(cuisine.name)} src={cuisine.image} alt={cuisine.name}/>  
                 <h2 className="cuisine-name" onClick={() => getResults(cuisine.name)}>{cuisine.name}</h2>
-                <p classname='cuisine-description'>{cuisine.description}</p>
+                <p className='cuisine-description'>{cuisine.description}</p>
               </div> 
             )    
           })}

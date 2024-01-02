@@ -2,7 +2,6 @@ import { useLocation } from 'react-router-dom'
 import { useEffect, useState } from 'react'
 import { Pagination, Grid } from "@mui/material"
 import SingleRecipe from './SingleRecipe'
-import { Homebar } from './Homebar'
 
 const pageSize = 8;
 
@@ -44,7 +43,6 @@ const PaginatedResults = (props) => {
 
   return (
     <>
-      <Homebar/>
       <div className='results-container'>
         <h1 className='cuisine-title' style={{marginBottom: '1.5rem'}}>{getPageTitle()}</h1>
 

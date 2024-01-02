@@ -1,12 +1,11 @@
 import { useNavigate } from "react-router-dom"
 
-const Navbar = () => {
+export const Navbar = () => {
   const navigate = useNavigate()
   return (
-    <div className='navbar'>
-      <button className='savedRecipes-button' onClick={() => navigate('/savedRecipes')}>Saved Recipes</button>
+    <div className="Homebar">
+      <h1 className="back-to-home" onClick={() => navigate('/')}>MealFinder</h1>
+      <button className='savedRecipes-button saved' onClick={() => navigate('/savedRecipes')}>Saved Recipes</button>
     </div>
   )
 }
-
-export default Navbar;
