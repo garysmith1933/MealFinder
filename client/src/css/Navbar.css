@@ -9,18 +9,19 @@
 
 .savedRecipes-button {
   margin-right: 3rem;
-  border: 1px solid #058C42;
+  border: 2px solid #058C42;
   background-color: rgba(0, 0, 0, 0.5);
   height: 50px;
   padding: 0.5rem;
   border-radius: 5px;
-  color: #058C42;
+  color: white;
   font-weight: 700;
   transition: color, 0.5s;
+  font-family: 'Outfit', sans-serif;
 }
 
 .savedRecipes-button:hover {
-  color: white;
+  color: #058C42;
   cursor: pointer
 }
 
