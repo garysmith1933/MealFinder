@@ -25,7 +25,7 @@ const CuisineResults = ({getCuisineRecipes, state}) => {
   return (
     <div className="main-cuisine-container">
       <h1 className='cuisine-title'>Cuisines</h1>
-      <h3 className='cuisine-sub-title'>Check out or collection of recipes to make your search a bit easier.</h3>
+      <h3 className='cuisine-sub-title'>Check out our collection of recipes to make your search a bit easier.</h3>
       <div className='cuisine-container'>
           {Cuisines.map(cuisine => {
             return (
