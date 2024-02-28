@@ -25,7 +25,9 @@ Users also have the ability to save recipes they want for later use. This was si
   A list of things I plan on doing in the near future
   • Implementing Typescript on client side.
   • Implementing Testing
-  
+  • Reworking redux store to use redux toolkit
+
+
 
 
 
