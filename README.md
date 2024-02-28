@@ -24,6 +24,9 @@ Users also have the ability to save recipes they want for later use. This was si
 ## Optimizations:
   A list of things I plan on doing in the near future
   • Implementing Typescript on client side.
+  • Implementing Testing
+  
+
 
 
   
