@@ -49,7 +49,7 @@ The start command should be set to - npm run start
 Make sure you choose the free option for the deployment as it is initally set to starter, which is $7 a month.
 You will also need to add your API key for so that the deployed application will be able to connect with the Spoontacular API. This can be done on the same page at the bottom under Environment Variables, the key should be REACT_APP_KEY, and the value should be your API key.
 
-Once you have all that you should be able to deploy it by clicked create web service at the bottom of the page.
+Once you have all that you should be able to deploy it by clicking create web service at the bottom of the page.
 
 ## Optimizations:
   A list of things I plan on doing in the near future
