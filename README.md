@@ -23,10 +23,15 @@ Users also have the ability to save recipes they want for later use. This was si
 
 ## Installation Guide:
 • Click on the green button on the right side of the repo that says "Code" and copy the link of the repo.
+
 • After forking the repo, in the terminal of your IDE of choice, enter the command "git clone" followed by the repository link.
+
 • The next step is to install the dependencies, in your terminal enter "npm install" to install the backend dependencies, once done enter "cd client" to and then enter "npm install" again to install the frontend dependencies. It may be easier to have two seperate terminals for this step.
+
 • The last step is to start both the backend server and the client side of the application.
+
   • To start the backend, make sure you are in the root directory and enter "npm run start" in the terminal. If it starts up correctly, you should see "Server listening on Port 3001"
+  
   • To start the frontend, change the directory to client by entering "cd client" in the terminal, then enter "npm run start again". If you can see the landing page of the application after this than you have successfully installed MealFinder!
 
 ## Optimizations:
