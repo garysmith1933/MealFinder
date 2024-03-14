@@ -2,17 +2,18 @@ if (process.env.NODE_ENV !== 'production') {
     require('dotenv').config();
   }
 
-import express, { Application, Request, Response, NextFunction }  from 'express'
+import * as express from 'express';
 import fetch from 'node-fetch';
-import path from 'path'
+import * as path from 'path'
 
-const app: Application = express();
+
+const app: express.Application = express();
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, '..', 'client/build')));
 
-app.post('/recipeResults', async (req: Request,res: Response, next: NextFunction) => {
+app.post('/recipeResults', async (req: express.Request, res: express.Response, next: express.NextFunction) => {
     try {
         const apiKey = `apiKey=${process.env.REACT_APP_KEY}`
         const api = "https://api.spoonacular.com/recipes/complexSearch?"
@@ -33,7 +34,7 @@ app.post('/recipeResults', async (req: Request,res: Response, next: NextFunction
     }
 })
 
-app.post('/cuisineRecipes', async (req: Request, res: Response, next: NextFunction) => {
+app.post('/cuisineRecipes', async (req: express.Request, res: express.Response, next: express.NextFunction) => {
     try {
         const apiKey = `apiKey=${process.env.REACT_APP_KEY}`
         const api = "https://api.spoonacular.com/recipes/complexSearch?"
@@ -53,7 +54,7 @@ app.post('/cuisineRecipes', async (req: Request, res: Response, next: NextFuncti
     }
 })
 
-app.post('/randomRecipe', async (req: Request, res: Response, next: NextFunction) => {
+app.post('/randomRecipe', async (req: express.Request, res: express.Response, next: express.NextFunction) => {
     try {
         const apiKey = `apiKey=${process.env.REACT_APP_KEY}`
         const api = "https://api.spoonacular.com/recipes/random?"
@@ -70,7 +71,7 @@ app.post('/randomRecipe', async (req: Request, res: Response, next: NextFunction
     }
 })
 
-app.get('*', (req: Request, res: Response) => {
+app.get('*', (req: express.Request, res: express.Response) => {
     res.sendFile(path.join(__dirname, '..', 'client', 'build', 'index.html'))
 });
 

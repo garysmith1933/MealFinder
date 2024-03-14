@@ -35,20 +35,17 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
         if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
     }
 };
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
 exports.__esModule = true;
 if (process.env.NODE_ENV !== 'production') {
     require('dotenv').config();
 }
-var express_1 = __importDefault(require("express"));
-var node_fetch_1 = __importDefault(require("node-fetch"));
-var path_1 = __importDefault(require("path"));
-var app = (0, express_1["default"])();
-app.use(express_1["default"].json());
-app.use(express_1["default"].urlencoded({ extended: true }));
-app.use(express_1["default"].static(path_1["default"].join(__dirname, '..', 'client/build')));
+var express = require("express");
+var node_fetch_1 = require("node-fetch");
+var path = require("path");
+var app = express();
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+app.use(express.static(path.join(__dirname, '..', 'client/build')));
 app.post('/recipeResults', function (req, res, next) { return __awaiter(void 0, void 0, void 0, function () {
     var apiKey, api, ingredients, recipeInfo, sort, number, url, data, json, err_1;
     return __generator(this, function (_a) {
@@ -68,6 +65,7 @@ app.post('/recipeResults', function (req, res, next) { return __awaiter(void 0, 
                 return [4 /*yield*/, data.json()];
             case 2:
                 json = _a.sent();
+                console.log(process.env.REACT_APP_KEY);
                 res.send(json);
                 return [3 /*break*/, 4];
             case 3:
@@ -136,7 +134,7 @@ app.post('/randomRecipe', function (req, res, next) { return __awaiter(void 0, v
     });
 }); });
 app.get('*', function (req, res) {
-    res.sendFile(path_1["default"].join(__dirname, '..', 'client', 'build', 'index.html'));
+    res.sendFile(path.join(__dirname, '..', 'client', 'build', 'index.html'));
 });
 var PORT = process.env.PORT || 3001;
 app.listen(PORT, function () {
