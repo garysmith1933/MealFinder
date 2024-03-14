@@ -22,13 +22,13 @@ Users also have the ability to save recipes they want for later use. This was si
 • You can use one react component to display different types of data if they share a similar format instead of making multiple files to display only one set of data. 
 
 ## Installation Guide:
-• Click on the green button on the right side of the repo that says "Code" and copy the link of the repo.
+Click on the green button on the right side of the repo that says "Code" and copy the link of the repo.
 
-• After forking the repo, in the terminal of your IDE of choice, enter the command "git clone" followed by the repository link.
+After forking the repo, in the terminal of your IDE of choice, enter the command "git clone" followed by the repository link.
 
-• The next step is to install the dependencies, in your terminal enter "npm install" to install the backend dependencies, once done enter "cd client" to and then enter "npm install" again to install the frontend dependencies. It may be easier to have two seperate terminals for this step.
+The next step is to install the dependencies, in your terminal enter "npm install" to install the backend dependencies, once done enter "cd client" to and then enter "npm install" again to install the frontend dependencies. It may be easier to have two seperate terminals for this step.
 
-• The last step is to start both the backend server and the client side of the application.
+The last step is to start both the backend server and the client side of the application.
 
   • To start the backend, make sure you are in the root directory and enter "npm run start" in the terminal. If it starts up correctly, you should see "Server listening on Port 3001"
   
