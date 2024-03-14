@@ -34,6 +34,9 @@ The last step is to start both the backend server and the client side of the app
   
   • To start the frontend, change the directory to client by entering "cd client" in the terminal, then enter "npm run start again". If you can see the landing page of the application after this than you have successfully installed MealFinder!
 
+NOTE: To have the application successfully make API calls you need to make an account at https://spoonacular.com/food-api and set up your API key in the project. Your API key can be found in the dashboard after an account is made.
+Once you have your API key, create a .env file in your application and enter REACT_APP_KEY = *enter your API key here*
+
 ## Optimizations:
   A list of things I plan on doing in the near future
   • Implementing Typescript on client side.
